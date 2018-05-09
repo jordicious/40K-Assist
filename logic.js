@@ -1,22 +1,15 @@
-var theme = 'dark';
 var w = screen.availWidth;
 var h = screen.availHeight;
-var input = 'null';
-var newtext ='';
-var isLandscape = true;
-var domTable = 'box';
-var boxcount = 0;
-var allText = 'bad';
 var data = [];
 
 function selreflector(){
-    var e = document.getElementById('weapon');
-    document.getElementById('type').innerText = data[e.value][1] + '" ' + data[e.value][2];
+    var e = $('#weapon').val();
+    $('#type')[0].innerText = data[e][1] + '" ' + data[e][2];
 }
 
 function updatebs(){
-    var e = document.getElementById('bs').value;
-    document.getElementById('bsdisplay').innerText = e+'+';
+    var e = $('#bs').val();
+    $('#bsdisplay')[0].innerText = e+'+';
 }
 
 function callback(rawdata){
@@ -29,7 +22,7 @@ function callback(rawdata){
             append+=line;
         }
     }
-    document.getElementById('unit').innerHTML = append;
+    $('#unit')[0].innerHTML = append;
     populateWargear();
 }
 
@@ -51,29 +44,29 @@ function readTextFile(file, callback){
 }
 
 function populateArmy(){
-    var army = document.getElementById('input').value;
+    var army = $('#input').val();
     console.log(army);
     var file = '/'+army+'manifest.txt'
     readTextFile(file, callback);
 }
 
 function populateWargear(){
-    var unit = document.getElementById('unit').value;
-    var i = Number(unit)+1;
+    var unit = $('#unit').val();
     var append = ''
-    for(;; i++){
+    for(var i = Number(unit)+1;; i++){
         if (data[i][0][0] === '-'){
             break;
         }else{
             var line = '<option value="' + i + '">' + data[i][0] + '</option>\n';
             append += line
         }
-    }document.getElementById('weapon').innerHTML = append;
+    }$('#weapon')[0].innerHTML = append;
     selreflector();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('unit').addEventListener("change",populateWargear);
-    document.getElementById('input').addEventListener("change",populateArmy);
-    document.getElementById('bs').addEventListener("mousemove",updatebs)
+$(document).ready(function(){
+    $('#unit').change(populateWargear);
+    $('#input').change(populateArmy);
+    $('#bs').mousemove(updatebs);
+    $('#weapon').change(selreflector);
 });

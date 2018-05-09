@@ -22,7 +22,7 @@ p {
 
 .ph {
     font-size: 28px;
-    margin-top: 1%;
+    margin: 1%;
 }
 
 .p{
@@ -111,11 +111,6 @@ img{
     background-color: #b90707;
 }
 
-.input{
-    width: 100%;
-    margin: auto;
-}
-
 #bsdisplay{
     font-size: 16pt;
     margin: auto;
@@ -150,9 +145,10 @@ img{
 
 select{
     display: block;
-    margin: 4%;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-top: 4%;
+    margin-bottom: 4%;
     box-sizing: border-box;
     font-size: 12pt;
     width: 100%;
