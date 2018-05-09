@@ -1,38 +1,27 @@
+/global variables/
 var w = screen.availWidth;
 var h = screen.availHeight;
-var data = [];
+var roster = [];
 
-function selreflector(){
-    var e = $('#weapon').val();
-    $('#type')[0].innerText = data[e][1] + '" ' + data[e][2];
-}
+/listeners for various functions/
+$(document).ready(function(){
+    $('#input').change(populate);
+    $('#unit').change(populateWargear);
+    $('#bs').mousemove(updatebs);
+    $('#weapon').change(selreflector);
 
-function updatebs(){
-    var e = $('#bs').val();
-    $('#bsdisplay')[0].innerText = e+'+';
-}
+    $('.popup').hide();
+});
 
-function callback(rawdata){
-    data = rawdata.split('\n');
-    var append = '';
-    for (var i=0; i < data.length; i++){
-        data[i] = data[i].split('|');
-        if (data[i][0][0] === '-') {
-            var line = '<option value="' + i + '">' + data[i][0] + '</option>\n';
-            append+=line;
-        }
-    }
-    $('#unit')[0].innerHTML = append;
-    populateWargear();
-}
-
+/generic textfile reader, takes a callback function for processing/
 function readTextFile(file, callback){
     var rawFile = new XMLHttpRequest();
+    console.log('opening file '+file);
     rawFile.open("GET", file, true);
     rawFile.onload = function() {
         if(rawFile.readyState === 4){
             if(rawFile.status === 200) {
-                callback(rawFile.responseText);
+                populateUnits(rawFile.responseText);
             }else{
                 console.error(rawFile.statusText);
             }
@@ -43,30 +32,57 @@ function readTextFile(file, callback){
     rawFile.send(null);
 }
 
-function populateArmy(){
+function populate(){
     var army = $('#input').val();
     console.log(army);
-    var file = '/'+army+'manifest.txt'
-    readTextFile(file, callback);
+    var file = '/data/'+army+'/roster.txt'
+    console.log('reading file '+file);
+    readTextFile(file, populateUnits);
+}
+
+function populateUnits(rawdata){
+    roster = rawdata.split('\n');
+    var append = '';
+    for (var i=0; i < roster.length; i++){
+        roster[i] = roster[i].split('|');
+        if (roster[i][0][0] === '-') {
+            var line = '<option value="' + i + '">' + roster[i][0] + '</option>\n';
+            append+=line;
+        }
+    }
+    $('#unit')[0].innerHTML = append;
+    populateWargear();
 }
 
 function populateWargear(){
     var unit = $('#unit').val();
     var append = ''
-    for(var i = Number(unit)+1;; i++){
-        if (data[i][0][0] === '-'){
+    for(var i = Number(unit)+1;i < roster.length; i++){
+        if (roster[i][0] === '*'){
             break;
         }else{
-            var line = '<option value="' + i + '">' + data[i][0] + '</option>\n';
+            var line = '<option value="' + i + '">' + roster[i][0] + '</option>\n';
             append += line
         }
     }$('#weapon')[0].innerHTML = append;
     selreflector();
 }
 
-$(document).ready(function(){
-    $('#unit').change(populateWargear);
-    $('#input').change(populateArmy);
-    $('#bs').mousemove(updatebs);
-    $('#weapon').change(selreflector);
-});
+function selreflector() {
+    if(roster[$('#weapon').val()][1]) {
+        if($('#popup').is(':visible')){
+            $('#weapon').removeClass("shorter");
+            $('#popup').hide();
+        }else{
+            $('#weapon').addClass("shorter");
+            $("#weapon").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () {
+                $('#popup').show();
+            });
+        }
+    }
+}
+
+function updatebs(){
+    var e = $('#bs').val();
+    $('#bsdisplay')[0].innerText = e+'+';
+}

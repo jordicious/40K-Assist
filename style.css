@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Lato";
-    src: url('../fonts/Lato-Regular.ttf');
+    src: url('/fonts/Lato-Regular.ttf');
 }
 
 html{
@@ -20,7 +20,7 @@ p {
     transition: all 0.25s ease-in-out;
 }
 
-.ph {
+p.ph {
     font-size: 28px;
     margin: 1%;
 }
@@ -46,7 +46,7 @@ a{
     border: 5px solid black;
 }
 
-.header{
+.header {
     height: 4%;
     background-color: dimgrey;
     width: 100%;
@@ -60,55 +60,6 @@ a{
     text-align: center;
     line-height: 100%;
     display: inline-block;
-}
-
-img{
-    vertical-align: middle;
-}
-
-.box{
-    margin: auto;
-    border: 5px solid red;
-    height: 100%;
-    width: 100%;
-}
-
-.match{
-    position: absolute;
-    background-color: rgba(0,0,0,0.8);
-    width: 100%;
-    height: 100%;
-    float: left;
-    transition: all 1s ease-in-out;
-    z-index: 2;
-    border: none;
-    box-shadow: 0 0 24px black;
-}
-
-.button2{
-    background-color: #BD0909;
-    outline: none;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 22px;
-    font-family: "Fira Sans";
-    cursor: pointer;
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    box-shadow:none;
-    border-radius:8px;
-    opacity: 1;
-    box-shadow: 0 0 8px black;
-}
-
-.button2:hover{
-    box-shadow: 0px 0px 16px 0px black;
-    background-color: #b90707;
 }
 
 #bsdisplay{
@@ -155,6 +106,21 @@ select{
     text-align-last: center;
     text-align-all: center;
     padding: 4%;
+    transition: width 0.5s ease-in-out;
+}
+
+select.shorter{
+    width: 80%;
+    display: inline;
+    margin: 0;
+    overflow: hidden;
+}
+
+select.popup{
+    width: 20%;
+    display: inline;
+    margin: 0;
+    white-space: nowrap;
 }
 
 table{
@@ -261,4 +227,5 @@ td.right{
 .text{
     font-size: 18px;
     padding: auto;
+    transition: all 0.5s ease-in-out;
 }
