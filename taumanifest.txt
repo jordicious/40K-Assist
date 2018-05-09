@@ -1,0 +1,76 @@
+-Crisis Suits-
+Airbursting Fragmentation Projector|18|Assault|D6
+Burst Cannon|18|Assault|4
+Cyclic Ion Blaster|18|Assault|3
+Cyclic Ion Blaster (OC)|18|Assault|D3
+Flamer|8|Assault|
+Fusion Blaster|18|Assault
+Fusion Blaster (Close)|9|Assault
+Missile Pod|36|Assault
+Plasma Rifle|24|Assault
+-Broadsides-
+Heavy Rail Rifle|60|Heavy
+High Yield Missile Pod|36|Heavy
+Plasma Rifle|24|Assault
+Smart Missile System|36|Heavy
+-Hammerhead-
+Ion Cannon|60|Heavy
+Ion Cannon (OC)|60|Heavy
+Railgun (SS)|72|Heavy
+Railgun (SM)|72|Heavy
+Burst Cannon|18|Assault|4
+Smart Missile System|36|Heavy
+-Ghostkeel-
+Cyclic Ion Raker|24|Heavy
+Cyclic Ion Raker (OC)|24|Heavy
+Fusion Collider|18|Heavy
+Fusion Collider (Close)|9|Heavy
+Burst Cannon|18|Assault|4
+Flamer|8|Assault|
+Fusion Blaster|18|Assault
+Fusion Blaster (Close)|9|Assault
+-Riptide-
+Heavy Burst Cannon|36|Heavy
+Heavy Burst Cannon (Nova)|36|Heavy
+Ion Accelerator|72|Heavy
+Ion Accelerator (OC)|72|Heavy
+Ion Accelerator (Nova)|72|Heavy
+Fusion Blaster|18|Assault
+Fusion Blaster (Close)|9|Assault
+Plasma Rifle|24|Assault
+Smart Missile System|36|Heavy
+-Stormsurge-
+Cluster Rocket System|48|Heavy
+Pulse Blastcannon(Close)|10|Heavy
+Pulse Blastcannon(Medium)|20|Heavy
+Pulse Blastcannon(Long)|30|Heavy
+Pulse Driver Cannon|72|Heavy
+Pulse Driver Cannon (10+)|72|Heavy
+-Infantry-
+Ion Rifle|30|Rapid
+Ion Rifle (OC)|30|Heavy
+Longshot Pulse Rifle|48|Rapid
+Markerlight|18|Heavy
+Pulse Carbine|18|Assault
+Photon Grenades|8|Grenade
+Pulse Pistol|8|Pistol
+Pulse Rifle|30|Rapid
+Rail Rifle|30|Heavy
+-Auxiliaries-
+Kroot Gun|48|Rapid
+Kroot Rifle|24|Rapid
+Neutron Blaster|18|Assault
+-Aircraft-
+High Output Burst Cannon|18|Assault
+Pulse Blaster (Close)|5|Assault
+Pulse Blaster (Medium)|10|Assault
+Pulse Blaster (Long)|15|Assault
+Pulse Bomb||Bomb
+Quad Ion Turret|30|Heavy
+Quad Ion Turret (OC)|30|Heavy
+-Emplacements-
+Smart Missile System|36|Heavy
+Supremacy Railgun||Heavy
+-Missiles-
+Destroyer Missile||Heavy
+Seeker Missile||Heavy

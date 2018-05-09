@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<div class="header">
+    <img src="new%20logo.png" height=100%>
+    Warhammer 40k Assist
+    <span id ='header'></span>
+</div>
+
+<div class ="content" id="content">
+    <table>
+        <tr>
+            <th>
+                <p class="ph">Firing Unit</p>
+                <select class="input" id="input">
+                    <option value="empty">- select -</option>
+                    <option value="tau">T'au Empire</option>
+                </select>
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td class="left">
+                <p class="p">Weapon</p>
+                <select id="unit">
+                </select>
+                <select id="weapon">
+                </select>
+                <p class="text" id="type">none</p>
+                <p class="p">Ballistic</p>
+                <div class="slidebox">
+                    <span id="spanbs"><input class='slider' type="range" min="1" max="6" value="4" id="bs"></span>
+                    <p class="p" id="bsdisplay">4+</p>
+                </div>
+            </td>
+            <td class="middle"></td>
+            <td class="right"></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="hider.js"></script>
+
+</body>
+</html>
