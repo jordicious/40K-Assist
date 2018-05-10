@@ -1,86 +1,79 @@
-/global variables/
+/*global variables*/
 var w = screen.availWidth;
 var h = screen.availHeight;
-var roster = [];
+var manifest = [];
+var roster = {};
+var fileHead = '';
 
-/listeners for various functions/
+/*listeners for various functions*/
 $(document).ready(function(){
-    $('#input').change(populate);
-    $('#unit').change(populateWargear);
+    $('#input').change(function() {
+        var army = $('#input').val();
+        fileHead = 'data/' + army + '/';
+        JSONRead(fileHead+'manifest.json', populate);
+    });
+    $('#unit').change(function() {
+        var selUnit = $('#unit').val();
+        var file = fileHead + 'roster/' + selUnit + '.json';
+        JSONRead(file, fillWargear)
+    })
+    $('#weapon').change(function() {
+        var weapon = $('#weapon').val();
+        var file = fileHead+'manifest/'+weapon+'.json';
+        JSONRead(file, pullsubs);
+    });
     $('#bs').mousemove(updatebs);
-    $('#weapon').change(selreflector);
-
-    $('.popup').hide();
+    $('#subweaponcell').hide();
 });
 
-/generic textfile reader, takes a callback function for processing/
-function readTextFile(file, callback){
-    var rawFile = new XMLHttpRequest();
-    console.log('opening file '+file);
-    rawFile.open("GET", file, true);
-    rawFile.onload = function() {
-        if(rawFile.readyState === 4){
-            if(rawFile.status === 200) {
-                populateUnits(rawFile.responseText);
-            }else{
-                console.error(rawFile.statusText);
-            }
-        }else{
-            console.error(rawFile.statusText);
+function JSONRead(file,callback){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            callback(JSON.parse(this.responseText));
         }
+    };
+    xhr.open("GET", file, true);
+    xhr.send();
+}
+
+function populate(ros){
+    roster = ros.units;
+    $('#unit')[0].innerHTML = '';
+    for(var i=0; i < roster.length; i++){
+        $('#unit')[0].innerHTML += '<option>' + roster[i] + '</option>';
     }
-    rawFile.send(null);
+    $('#unit').change();
 }
 
-function populate(){
-    var army = $('#input').val();
-    console.log(army);
-    var file = '/data/'+army+'/roster.txt'
-    console.log('reading file '+file);
-    readTextFile(file, populateUnits);
-}
-
-function populateUnits(rawdata){
-    roster = rawdata.split('\n');
-    var append = '';
-    for (var i=0; i < roster.length; i++){
-        roster[i] = roster[i].split('|');
-        if (roster[i][0][0] === '-') {
-            var line = '<option value="' + i + '">' + roster[i][0] + '</option>\n';
-            append+=line;
-        }
+function fillWargear(man){
+    manifest = man.weapons;
+    $('#weapon')[0].innerHTML = '';
+    for(var i=0; i < manifest.length; i++){
+        $('#weapon')[0].innerHTML += '<option>' + manifest[i] + '</option>';
     }
-    $('#unit')[0].innerHTML = append;
-    populateWargear();
+    $('#weapon').change();
 }
 
-function populateWargear(){
-    var unit = $('#unit').val();
-    var append = ''
-    for(var i = Number(unit)+1;i < roster.length; i++){
-        if (roster[i][0] === '*'){
-            break;
-        }else{
-            var line = '<option value="' + i + '">' + roster[i][0] + '</option>\n';
-            append += line
+function pullsubs(weap) {
+    try {
+        var subs = weap.subs;
+        $('#subs')[0].innerHTML = '';
+        for (var i=0; i < subs.length; i++){
+            var value = $('#weapon').val() + ' ' + subs[i];
+            var line = '<option value="' + value + '">' + subs[i] + '</option>';
+            $('#subs')[0].innerHTML += line;
         }
-    }$('#weapon')[0].innerHTML = append;
-    selreflector();
-}
+        $('#subweaponcell').show();
 
-function selreflector() {
-    if(roster[$('#weapon').val()][1]) {
-        if($('#popup').is(':visible')){
-            $('#weapon').removeClass("shorter");
-            $('#popup').hide();
-        }else{
-            $('#weapon').addClass("shorter");
-            $("#weapon").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () {
-                $('#popup').show();
-            });
-        }
+    } catch (err) {
+        $('#subweaponcell').hide();
+        var value = $('#weapon').val();
+        var line = '<option value="' + value + '">' + value + '</option>';
+        $('#subs')[0].innerHTML = line;
     }
 }
+
 
 function updatebs(){
     var e = $('#bs').val();

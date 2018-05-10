@@ -1,8 +1,0 @@
--Commander-|2
-Airbursting Fragmentation Projector
-Burst Cannon
-Cyclic Ion Blaster|Standard/Overcharge
-Flamer
-Fusion Blaster|Standard/Overcharge
-Missile Pod
-Plasma Rifle

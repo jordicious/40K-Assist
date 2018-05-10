@@ -7,13 +7,14 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <div class="header">
-    <img src="new%20logo.png" height=100%>
-    Warhammer 40k Assist
-    <span id ='header'></span>
+
+    <span id ='header'>
+        <img src="new%20logo.png" height=100%>
+    </span>
 </div>
 
 <div class ="content" id="content">
-    <table>
+    <table class="main">
         <tr>
             <th>
                 <p class="ph">Firing Unit</p>
@@ -22,7 +23,7 @@
             <th></th>
         </tr>
         <tr>
-            <td class="left">
+            <td class='main' id="left">
                 <p class="p">Faction</p>
                 <select id="input">
                     <option value="empty">- select -</option>
@@ -30,13 +31,22 @@
                 </select>
                 <p class="p">Unit & Weapon</p>
                 <select id="unit">
-                    <option>- Select a Faction -</option>
+                    <option id ='defaultunit'>- Select a Faction -</option>
                 </select>
-                <select id="weapon">
-                    <option>- Select a Unit -</option>
-                </select>
-                <select class="popup" id="popup">
-                </select>
+
+                <table class="sub">
+                    <tr id="weaponrow">
+                        <td width="70%">
+                            <select id="weapon">
+                                <option value='none'>- Select a Unit -</option>
+                            </select>
+                        </td>
+                        <td id='subweaponcell'>
+                            <select id="subs">
+                            </select>
+                        </td>
+                    </tr>
+                </table>
                 <p class="text" id="type">none</p>
                 <p class="p">Ballistic</p>
                 <div class="slidebox">
@@ -44,8 +54,8 @@
                     <p class="p" id="bsdisplay">4+</p>
                 </div>
             </td>
-            <td class="middle"></td>
-            <td class="right"></td>
+            <td class="main" id="middle"></td>
+            <td class="main" id="right"></td>
         </tr>
     </table>
 </div>
