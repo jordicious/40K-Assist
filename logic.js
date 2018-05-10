@@ -27,7 +27,6 @@ $(document).ready(function(){
         var file = fileHead+'manifest/'+selWeap+'.json';
         JSONRead(file, readWeapon)
     });
-
     $('#bs').mousemove(updatebs);
     $('#bs').change(updatebs);
     $('#subweaponcell').hide();
@@ -100,7 +99,8 @@ function pullsubs(weap) {
 }
 
 function readWeapon(weap) {
-    null
+    var line = weap.type + ' ' + weap.shots + ' S:' + weap.s + ' AP:' + weap.ap + ' Damage:' + weap.d;
+    $('#type')[0].innerText = line;
 }
 
 function updatebs(){
