@@ -8,5 +8,6 @@
       "scripts": ["background.js"]
     }
   },
-  "icons": { "32": "32img.png", "128": "128img.png" }
+  "icons": { "32": "32img.png", "128": "128img.png" },
+  "permissions": ["fullscreen"]
 }
