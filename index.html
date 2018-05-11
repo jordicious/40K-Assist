@@ -19,7 +19,9 @@
             <th>
                 <p class="ph">Firing Unit</p>
             </th>
-            <th></th>
+            <th>
+                <p class="ph">Unit Fired Upon</p>
+            </th>
             <th></th>
         </tr>
         <tr>
@@ -28,6 +30,7 @@
                 <select id="input">
                     <option value="empty">- select -</option>
                     <option value="tau">T'au Empire</option>
+                    <option value="tyranid">Tyranids</option>
                 </select>
                 <p class="p">Unit & Weapon</p>
                 <select id="unit">
@@ -54,7 +57,18 @@
                     <p class="p" id="bsdisplay">4+</p>
                 </div>
             </td>
-            <td class="main" id="middle"></td>
+            <td class="main" id="middle">
+                <p class="p">Faction</p>
+                <select id="input2">
+                    <option value="empty">- select -</option>
+                    <option value="tau">T'au Empire</option>
+                    <option value="tyranid">Tyranids</option>
+                </select>
+                <p class="p">Unit & Weapon</p>
+                <select id="unit2">
+                    <option id ='defaultunit2'>- Select a Faction -</option>
+                </select>
+            </td>
             <td class="main" id="right"></td>
         </tr>
     </table>

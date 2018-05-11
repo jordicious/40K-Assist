@@ -61,19 +61,19 @@ function fillWargear(unit){
     $('#weapon').change();
 
     bs = unit.bs;
+    console.log(bs);
     if (bs.length > 1){
         $('#bs')[0].min = bs[0];
         $('#bs')[0].max = bs[1];
         $('#bs')[0].value = bs[0];
-        $('#bs')[0].disabled = false;
         $('#bs').removeClass('grey');
-    } else {
+        $('#bs')[0].disabled = false;
+    }else{
         $('#bs')[0].min = 1;
         $('#bs')[0].max = 6;
         $('#bs')[0].value = bs;
-        $('#bs')[0].disabled = true;
-        console.log('addclass executing');
         $('#bs').addClass('grey');
+        $('#bs')[0].disabled = true;
     }
     $('#bs').change();
 }
@@ -106,4 +106,22 @@ function readWeapon(weap) {
 function updatebs(){
     var e = $('#bs').val();
     $('#bsdisplay')[0].innerText = e+'+';
+}
+
+/*Listeners for second army*/
+$(document).ready(function() {
+    $('#input2').change(function () {
+        var army = $('#input2').val();
+        fileHead = 'data/' + army + '/';
+        JSONRead(fileHead + 'manifest.json', populate2);
+    });
+});
+
+function populate2(ros){
+    roster2 = ros.units;
+    $('#unit2')[0].innerHTML = '';
+    for(var i=0; i < roster2.length; i++){
+        $('#unit2')[0].innerHTML += '<option>' + roster2[i] + '</option>';
+    }
+    $('#unit2').change();
 }

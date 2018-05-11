@@ -1,1 +1,1 @@
-{"name":"Commander","bs":2,"weapons":["Airbursting Fragmentation Projector","Burst Cannon","Cyclic Ion Blaster","Flamer","Fusion Blaster","Missile Pod","Plasma Rifle"]}
+{"name":"Commander","bs":2,"toughness":5, "save":[3,4],"weapons":["Airbursting Fragmentation Projector","Burst Cannon","Cyclic Ion Blaster","Flamer","Fusion Blaster","Missile Pod","Plasma Rifle"]}
