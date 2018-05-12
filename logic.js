@@ -4,9 +4,15 @@ var h = screen.availHeight;
 var manifest = [];
 var roster = {};
 var fileHead = '';
+var fileHead2 = '';
 
-/*listeners for various functions*/
+var selUnit = '';
+var selUnit2 = '';
+
+/*listeners for left army*/
 $(document).ready(function(){
+    JSONRead('/data/armies.json', fillArmies)
+
     $('#input').change(function () {
         var army = $('#input').val();
         fileHead = 'data/' + army + '/';
@@ -27,8 +33,6 @@ $(document).ready(function(){
         var file = fileHead+'manifest/'+selWeap+'.json';
         JSONRead(file, readWeapon)
     });
-    $('#bs').mousemove(updatebs);
-    $('#bs').change(updatebs);
     $('#subweaponcell').hide();
 });
 
@@ -43,6 +47,13 @@ function JSONRead(file,callback){
     xhr.send();
 }
 
+function fillArmies(armies){
+    for (i = 0; i < armies.list.length; i++){
+        line = '<option>' + armies.list[i] + '</option>';
+        $('#input')[0].innerHTML += line;
+    }
+}
+
 function populate(ros){
     roster = ros.units;
     $('#unit')[0].innerHTML = '';
@@ -53,6 +64,7 @@ function populate(ros){
 }
 
 function fillWargear(unit){
+    selUnit = unit;
     manifest = unit.weapons;
     $('#weapon')[0].innerHTML = '';
     for(var i=0; i < manifest.length; i++){
@@ -61,21 +73,18 @@ function fillWargear(unit){
     $('#weapon').change();
 
     bs = unit.bs;
-    console.log(bs);
+    $('#slidebox')[0].innerHTML = '';
     if (bs.length > 1){
-        $('#bs')[0].min = bs[0];
-        $('#bs')[0].max = bs[1];
-        $('#bs')[0].value = bs[0];
-        $('#bs').removeClass('grey');
-        $('#bs')[0].disabled = false;
-    }else{
-        $('#bs')[0].min = 1;
-        $('#bs')[0].max = 6;
-        $('#bs')[0].value = bs;
-        $('#bs').addClass('grey');
-        $('#bs')[0].disabled = true;
+        var line = '<td><input type="radio" name="bs" value=' + bs[i] + ' checked><label>' + bs[i] + '+</label></td>';
+        $('#slidebox')[0].innerHTML += line;
+        for (var i = 1; i < bs.length; i++) {
+            var line = '<td><input type="radio" name="bs" value=' + bs[i] + '><label for="bs' + i + '">' + bs[i] + '+</label></td>';
+            $('#slidebox')[0].innerHTML += line;
+        }
+    } else {
+        var line = '<td><input type="radio" name="bs" value=' + bs + ' checked disabled><label for="bs">' + bs + '+</label></td>';
+        $("#slidebox")[0].innerHTML = line;
     }
-    $('#bs').change();
 }
 
 function pullsubs(weap) {
@@ -103,19 +112,27 @@ function readWeapon(weap) {
     $('#type')[0].innerText = line;
 }
 
-function updatebs(){
-    var e = $('#bs').val();
-    $('#bsdisplay')[0].innerText = e+'+';
-}
-
 /*Listeners for second army*/
 $(document).ready(function() {
+    JSONRead('data/armies.json', fillArmies2);
+
     $('#input2').change(function () {
         var army = $('#input2').val();
-        fileHead = 'data/' + army + '/';
-        JSONRead(fileHead + 'manifest.json', populate2);
+        fileHead2 = 'data/' + army + '/';
+        JSONRead(fileHead2 + 'manifest.json', populate2);
     });
+    $('#unit2').change(function () {
+        file = fileHead2 + 'roster/' + $('#unit2').val() + '.json';
+        JSONRead(file, readUnit2)
+    })
 });
+
+function fillArmies2(armies){
+    for (i = 0; i < armies.list.length; i++){
+        line = '<option>' + armies.list[i] + '</option>';
+        $('#input2')[0].innerHTML += line;
+    }
+}
 
 function populate2(ros){
     roster2 = ros.units;
@@ -124,4 +141,19 @@ function populate2(ros){
         $('#unit2')[0].innerHTML += '<option>' + roster2[i] + '</option>';
     }
     $('#unit2').change();
+}
+
+function readUnit2(unit) {
+    selUnit2 = unit;
+    sv = selUnit2.save;
+    $('#savebox')[0].innerHTML = '';
+    if (sv.length > 1){
+        var line = '<td><input type="radio" name="save" value=' + sv[0] + ' checked><label>' + sv[0] + '+</label></td>';
+        $('#savebox')[0].innerHTML += line;
+        var line = '<td><input type="radio" name="save" value=' + sv[1] + '><label>' + sv[1] + '++</label></td>';
+        $('#savebox')[0].innerHTML += line;
+    } else {
+        var line = '<td><input type="radio" name="save" value=' + sv + ' checked disabled><label>' + sv + '+</label></td>';
+        $("#savebox")[0].innerHTML = line;
+    }
 }

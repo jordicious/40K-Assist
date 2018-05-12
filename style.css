@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Lato";
+    font-family: "Lato", "Lato Black";
     src: url('/fonts/Lato-Regular.ttf');
 }
 
@@ -22,7 +22,8 @@ p {
 
 p.ph {
     font-size: 28px;
-    margin: 1%;
+    margin: 5% 0 0 5%;
+    font-weight: bold;
 }
 
 p.p{
@@ -31,7 +32,8 @@ p.p{
 }
 
 hr{
-    opacity: 0.2;
+    opacity: .5;
+    width: 90%;
 }
 
 a{
@@ -82,29 +84,40 @@ input[type=range].grey::-webkit-slider-thumb {
     box-shadow: 0 0 5px black;
 }
 
+input[type=radio]{
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px grey;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=radio]:checked{
+    background: red;
+    box-shadow: 0 0 5px grey;
+}
+
 .content {
     position: relative;
     display: block;
-    height: 80%;
-    padding-top: auto;
-    padding-bottom: auto;
-    border: 5px solid black;
+    height: auto;
 }
 
 .header {
-    height: 4%;
+    height: 7%;
     background-color: dimgrey;
     width: 100%;
     font-size: 22px;
-    padding-top: 1%;
-    padding-bottom: 0.5%;
-    padding-left: 2%;
+    padding: 0.5% 0 0.25% 0;
     z-index: 1;
     box-shadow: 0px 0px 12px black;
     color: whitesmoke;
     text-align: center;
     line-height: 100%;
-    display: inline-block;
+    display: block;
 }
 
 .slidebox{
@@ -114,15 +127,21 @@ input[type=range].grey::-webkit-slider-thumb {
 select{
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     box-sizing: border-box;
     font-size: 12pt;
     width: 100%;
     text-align-last: center;
     text-align-all: center;
     padding: 10px;
-    transition: width 0.5s ease-in-out;
+    background: #d3d3d3;
+    box-shadow: inset 0 0 5px grey;
+    transition: all 0.25s ease-in-out;
+    margin: 10px;
+}
+
+select:hover{
+    background: whitesmoke;
+    box-shadow: 0 0 5px grey;
 }
 
 table{
@@ -135,17 +154,21 @@ table{
 table.main{
     width: 100%;
     height: 100%;
-    margin-bottom: 10px;
 }
 
 td, tr, th{
     vertical-align: center;
+    text-align: center;
     height: auto;
-    /*border: 1px solid red;*/
 }
 
 td.main, tr.main, th.main{
     padding: 2%;
+    border-right: 1px solid black;
+}
+
+td label{
+    display: block;
 }
 
 .box{
@@ -164,26 +187,6 @@ td.main, tr.main, th.main{
     display: block;
     width: 15%;
     margin: auto;
-}
-
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 34px;
-    padding-bottom: auto;
-    cursor: pointer;
-    font-size: 20pt;
-    color: #bd0909;
-    font-family: "Fira Sans";
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 0.25s ease-in-out;
 }
 
 .button {
@@ -214,22 +217,8 @@ td.main, tr.main, th.main{
     background-color: #b90707;
 }
 
-td#left{
-    width: 20%;
-    height: 100%;
-    padding: auto;
-}
-
-td#middle{
-    width: 20%;
-    height: 100%;
-    padding: auto;
-}
-
-td#right{
-    width: 60%;
-    height: 100%;
-    padding: auto;
+td{
+    width: 50%;
 }
 
 .text{

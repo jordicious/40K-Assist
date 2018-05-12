@@ -2,15 +2,13 @@
 <html>
 <head>
     <script src="/jquery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="logic.js"></script>
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="style.css">
 
 <div class="header">
-
-    <span id ='header'>
-        <img src="new%20logo.png" height=100%>
-    </span>
+    <img src="new%20logo.png" height=100%>
 </div>
 
 <div class ="content" id="content">
@@ -18,32 +16,30 @@
         <tr>
             <th>
                 <p class="ph">Firing Unit</p>
+                <hr>
             </th>
             <th>
                 <p class="ph">Unit Fired Upon</p>
+                <hr>
             </th>
-            <th></th>
-        </tr>
-        <tr>
-            <td class='main' id="left">
+        </tr><tr>
+            <td class="main" id="left">
                 <p class="p">Faction</p>
                 <select id="input">
                     <option value="empty">- select -</option>
-                    <option value="tau">T'au Empire</option>
-                    <option value="tyranid">Tyranids</option>
                 </select>
                 <p class="p">Unit & Weapon</p>
                 <select id="unit">
-                    <option id ='defaultunit'>- Select a Faction -</option>
+                    <option id ='defaultunit'>- select -</option>
                 </select>
                 <table class="sub">
                     <tr id="weaponrow">
                         <td width="70%">
                             <select id="weapon">
-                                <option value='none'>- Select a Unit -</option>
+                                <option value='none'>- select -</option>
                             </select>
                         </td>
-                        <td id='subweaponcell'>
+                        <td width="30%" id='subweaponcell'>
                             <select id="subs">
                             </select>
                         </td>
@@ -52,29 +48,39 @@
                 <p class="text" id="type">none</p>
                 <p class="p">Ballistic</p>
 
-                <div class="slidebox" id = slidebox>
-                    <input class = 'grey' id="bs" type="range" min="1" max="6" value="4" disabled>
-                    <p class="p" id="bsdisplay">4+</p>
+                <div class="slidebox">
+                    <table>
+                        <tr id = "slidebox">
+                            <td><input type="radio" name="4+" id="bs0" checked disabled><label for="bs0">4+</label></td>
+                        </tr>
+                    </table>
                 </div>
             </td>
-            <td class="main" id="middle">
+            <td class = 'main' id="middle">
                 <p class="p">Faction</p>
                 <select id="input2">
                     <option value="empty">- select -</option>
-                    <option value="tau">T'au Empire</option>
-                    <option value="tyranid">Tyranids</option>
                 </select>
-                <p class="p">Unit & Weapon</p>
+                <p class="p">Unit</p>
                 <select id="unit2">
-                    <option id ='defaultunit2'>- Select a Faction -</option>
+                    <option id ='defaultunit2'>- select -</option>
                 </select>
+
+                <p class="text" id="type2">none</p>
+                <p class="p">Save</p>
+
+                <table>
+                    <tr id="savebox">
+                        <td><input type="radio" name="save" id="save1" checked><label for="save1">6+</label></td>
+                    </tr>
+                </table>
             </td>
-            <td class="main" id="right"></td>
+    </tr><tr>
+            <td class='main' colspan="2" class = "wide" id="right">
+            </td>
         </tr>
     </table>
 </div>
-
-<script type="text/javascript" src="logic.js"></script>
 
 </body>
 </html>
