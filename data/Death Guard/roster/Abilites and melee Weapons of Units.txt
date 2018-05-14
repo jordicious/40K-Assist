@@ -1,0 +1,156 @@
+Death to the False Emperor: During the fight phase any hit rolls of 6+ against an 'Imperium' unit generate an additional attack (these additional attacks cannot generate further attacks)
+Disgustingly Resilient: Whenever the unit takes damage roll a die, on a 5+ the unit does not suffer that point of damage
+
+Biologus Putrifier
+	Melee Weapons
+		Plague Knife
+	Abilites
+		Death to the False Emperor
+		Disgustingly Resilient
+		Pestilential Explosion (Not necessary): When this model is reduced to 0 wounds, roll a die, on a 4+ each unit within 7” suffers 1 mortal wound unless it has the ‘Nurgle’ keyword
+		Blight Racks (difficult to implement): Increase the Strength and Damage of all Blight Grenades (not hyper blight grenades) carried by friendly Death Guard within 3” units by 1, and each wound roll of 6+ made with a Blight Grenade inflicts an additional mortal wound
+
+Blightlord Terminators
+	Melee Weapons
+		Balesword
+		Bubotic Axe
+	Abilities
+		Death to the False Emperor
+		Disgustingly Resilient
+		Teleport Strike (Not necessary): Can set up in the teleportarium chamber instead of the deployment zone
+		Aura of Rust: On a wound roll of 6+ during the fight phase, increase the AP by 1 for that save
+		Cataphractii Armor (Invuln save implemented, advance not necessary): 4+ Invulnerable Save, half Advance roles
+
+Chaos Cultists
+	Melee Weapons
+		Brutal Assault Weapon
+
+Chaos Land Raider
+*note has 2 twin lascannons*
+	Melee Weapons
+		Improvised Weapon
+	Abilities
+	Daemonic Machine Spirit: Ignore the penalty for moving and firing heavy weapons
+	Smoke Launchers: (Difficult to implement): Once per game instead of shooting any weapons during the Shooting Phase you can use its Smoke Launchers, until the start of your next Shooting Phase all enemy units have -1 to hit this unit
+	Explodes (Not necessary): When this unit is reduced to 0 wounds, roll a die on a 6 each unit within 6” suffers D6 mortal wounds
+
+Chaos Lord
+	Melee Weapons
+		Balesword
+		Chainaxe
+		Chainsword		
+		Lightning Claw
+		Power Axe
+		Power Fist
+		Power Maul
+		Power Sword
+	Abilities
+		Death to the False Emperor
+		Sigil of Corruption (implented): 4+ invuln save
+		Lord of Nurgle (difficult to implement for other units): Friendly Death Guard unitws within 6" reroll hit rolls of 1
+
+Chaos Lord in Terminator Armor
+	Melee Weapons
+		Balesword
+		Chainfist
+		Lightning Claw
+		Power Axe
+		Power Fist
+		Power Maul
+		Power Sword
+	Abilities
+		Death to the False Emperor
+		Sigil of Corruption (implented): 4+ invuln save
+		Lord of Nurgle (difficult to implement for other units): Friendly Death Guard unitws within 6" reroll hit rolls of 1
+		Teleport Strike (not necessary): Can deepstrike
+
+Chaos Predator
+*note when taking lascannons or heavy bolters you get 2*
+	Melee Weapons
+		Improvised Weapon
+	Abilities
+		Smoke Launchers: (Difficult to implement): Once per game instead of shooting any weapons during the Shooting Phase you can use its Smoke Launchers, until the start of your next Shooting Phase all enemy units have -1 to hit this unit
+		Explodes (Not necessary): When this unit is reduced to 0 wounds, roll a die on a 6 each unit within 6” suffers D3 mortal wounds
+Chaos Rhino
+	Melee Weapons
+		Improvised Weapon
+	Abilities
+		Self Repair (Not necessary): Roll a die at the start of each of your turns on a 6 this unit regains 1 wound
+		Smoke Launchers: (Difficult to implement): Once per game instead of shooting any weapons during the Shooting Phase you can use its Smoke Launchers, until the start of your next Shooting Phase all enemy units have -1 to hit this unit
+		Explodes (Not necessary): When this unit is reduced to 0 wounds, roll a die on a 6 each unit within 6” suffers D3 mortal wounds
+Chaos Spawn
+	Melee Weapons
+		Hideos Mutations
+	Abilities
+	Fearsome (Difficult to implement, may not be necessary tho): Units within 1” of any Chaos Spawn subtract 1 from their Leadership
+	Mutated Beyond Reason: When a unit of Chaos Spawn makes its close combat attack roll a D3 and see below, each effect lasts until the end of the Fight phase
+		1: Hideous Mutations has an AP of -4 instead of -2
+		2: +2 attacks
+		3: Reroll failed wound rolls
+
+Daemon Prince of Nurgle
+	Melee Weapons
+		Daemonic Axe
+		Hellforged Sword
+		Malefic Talons (can take a second)
+	Abilities
+		Daemonic (Implemented):5+ invuln save
+		Death to the False Emperor
+		Disgustingly Resilient
+		Prince of Chaos (Hard to implement for other units): Allied Death Guard and Nurgle Daemon units within 6" can reroll hit rolls of 1
+
+Deathshroud Terminators
+*Terminator champion can take a second plaguespurt gauntlet*
+	Melee Weapons
+		Manreaper
+	Abilities
+		Cataphractii Armor (implented, but advance is unecesarry): 4+ Invulnerable save, half Advance rolls
+		Death to the False Emperor
+		Disgustingly Resilient
+		Eyes of Mortarion (Hard to implement): Death Guard Characters within 3” add 1 to their Attack
+		Teleport Strike (not necesarry): Can deepstrike
+		Silent Bodyguard (not necesarry): Roll a die each time a friendly Death Guard Character within 3” is hit by an attack, on a 2+ on of the Deathshroud takes the hit instead
+Defiler
+	Melee Weapons
+		Defiler Claws
+		Defiler Scourge
+	Abilities
+		Daemonic (implemented): 5+ Invulnerable Save
+		Infernal Regeneration (not necessary): Regain 1 wound at the beginning of each of your turns
+		Smoke Launchers (hard to implement): Once per game instead of shooting any weapons during the Shooting Phase you can use its Smoke Launchers, until the start of your next Shooting Phase all enemy units have -1 to hit this unit
+		Explodes (not necessary): When this unit is reduced to 0 wounds, roll a die on a 6 each unit within 6” suffers D3 mortal wounds
+
+Foetid Bloat-Drone
+*Note has 2 plague spitters*
+	Melee Weapons
+		Fleshmower
+		Plague Probe
+	Abilities
+		Disgustingly Resilient
+		Daemonic (implemented): 5+ Invulnerable Save
+		Putrid Explosion (not necessary): When reduced to 0 wounds, roll a D6 on a 4+ all units within 7” suffer 1 mortal wound
+
+Foul Blightspawn
+	Melee Weapons
+		Improvised Weapon
+	Abilities
+		Death to the False Emperor
+		Disgustingly Resilient
+		Revolting Stench (not necesarry): If an enemy unit charges and ends 7” within the Foul Blightspawn it does not get to Fight first
+		Unholy Death’s Head (hard to implement for other characters): Once per battle, a Foul Blightspawn or a friendly Death Guard Character within 3” may throw an Unholy Death’s Head Grenade instead of a Blight Grenade or Hyper Blight Grenade, when you do so change the weapons type to Grenade 2D6
+
+Helbrute
+Lord of Contagion
+Malignant Plaguecaster
+Mortarion
+Myphitic Blight-Haulers
+Noxious Blightbringer
+Plague Marines
+Plague Surgeon
+Plagueburst Crawler
+Possessed
+Poxwalkers
+Sorcerer
+Sorcerer in Terminator Armor
+Tallyman
+Typhus

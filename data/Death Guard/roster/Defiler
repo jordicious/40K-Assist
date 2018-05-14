@@ -1,0 +1,12 @@
+{
+  "name":"Defiler",
+  "models":1,
+  "bs":[4,5],
+  "ws":4,
+  "s":8,
+  "t":7,
+  "a":[4,3,2],
+  "sv":[3,5],
+  "ld":7,
+  "weapons":["Battle Cannon","Combi-bolter","Combi-flamer","Combi-melta","Combi-plasma","Havoc Launcher","Reaper Autocannon","Twin Heavy Flamer","Twin Heavy Bolter","Twin Lascannon"]
+}

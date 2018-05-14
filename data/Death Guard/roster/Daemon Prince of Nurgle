@@ -1,0 +1,12 @@
+{
+  "name":"Daemon Prince of Nurgle",
+  "models":1,
+  "bs":7,
+  "ws":2,
+  "s":7,
+  "t":6,
+  "a":4,
+  "sv":[3,5],
+  "ld":10,
+  "weapons":[]
+}
