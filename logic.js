@@ -29,17 +29,17 @@ $(document).ready(function(){
         JSONRead(file, fillWargear)
     });
 
-    // monitors the wargear slector and calls the subtype checker
+    // monitors the wargear selector and calls the subtype checker
     $('#weapon').change(function () {
         var weapon = $('#weapon').val();
-        var file = fileHead+'manifest/'+weapon+'.json';
+        var file = fileHead+'weapons/'+weapon+'.json';
         JSONRead(file, pullsubs);
     });
 
     // monitors the subweapon selector for changes and calls the weapon display updater
     $('#subs').change(function () {
         var selWeap = $('#subs').val();
-        var file = fileHead+'manifest/'+selWeap+'.json';
+        var file = fileHead+'weapons/'+selWeap+'.json';
         JSONRead(file, readWeapon)
     });
 

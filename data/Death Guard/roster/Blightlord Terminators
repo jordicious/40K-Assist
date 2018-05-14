@@ -1,0 +1,12 @@
+{
+  "name":"Blightlord Terminators",
+  "models":[1,2,3,4,5,6,7,8,9,10],
+  "bs":3,
+  "ws":3,
+  "s":4,
+  "t":5,
+  "a":[3,4],
+  "sv":[3,4],
+  "ld":[8,9],
+  "weapons":["Blight Launcher", "Combi-bolter","Combi-flamer","Combi-melta","Combi-plasma", "Plague Spewer", "Reaper Autocannon"]
+}
