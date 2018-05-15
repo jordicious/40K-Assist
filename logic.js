@@ -166,17 +166,22 @@ function populate2(ros) {
     $("#input2 option[value='none']").remove(); //removes the default -select- option
 }
 
-function readUnit2(unit) {
+function readUnit2(unit) {  //this function fills up saves for the active unit kind of like how the ballistic skill fills.  the only difference is that there can only be 1 or 2 saves, never 3.
     selUnit2 = unit;
+
+    $("#type2")[0].innerText = "Toughness: " + selUnit2.toughness + ", Save:";
+
     var sv = selUnit2.save;
-    $('#savebox')[0].innerHTML = '';    //this function fills up saves for the active unit kind of like how the ballistic skill fills.  the only difference is that there can only be 1 or 2 saves, never 3.
+    $('#savebox')[0].innerHTML = '';
     if (sv.length > 1) {
         var line = '<td><input type="radio" name="save" value=' + sv[0] + ' checked><label>' + sv[0] + '+</label></td>';
         var line2 = '<td><input type="radio" name="save" value=' + sv[1] + '><label>' + sv[1] + '++</label></td>';
         $('#savebox')[0].innerHTML += line+line2;
+        $('#type2')[0].innerText += " " + sv[0] + "+ / " + sv[1] + "++"
     } else {
         var line = '<td><input type="radio" name="save" value=' + sv + ' checked disabled><label>' + sv + '+</label></td>';
         $("#savebox")[0].innerHTML = line;
+        $('#type2')[0].innerText += " " + sv + "+"
     }
     $("#unit2 option[value='none']").remove();  //removes the default -select- option
     svTrack = true;
@@ -202,6 +207,6 @@ function updatecomp(){
                 wT = 2;
                 break;
         }
-
+        $('#compdisplay')[0].innerText = 'Min Wound Roll: ' + wT + '+'
     }
 }
