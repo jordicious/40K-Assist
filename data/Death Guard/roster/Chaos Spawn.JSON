@@ -1,0 +1,12 @@
+{
+  "name":"Chaos Spawn",
+  "models":1,
+  "bs":"NA",
+  "ws":4,
+  "s":5,
+  "t":5,
+  "a":"d6",
+  "sv":5,
+  "ld":9,
+  "weapons":[]
+}

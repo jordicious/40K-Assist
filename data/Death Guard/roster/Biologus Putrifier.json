@@ -1,0 +1,12 @@
+{
+  "name":"Biologus Putrifier",
+  "models":1,
+  "bs":3,
+  "ws":3,
+  "s":4,
+  "t":5,
+  "a":3,
+  "sv":3,
+  "ld":8,
+  "weapons":["Injector Pistol","Hyper Blight Grenade","Krak Grenade"]
+}
