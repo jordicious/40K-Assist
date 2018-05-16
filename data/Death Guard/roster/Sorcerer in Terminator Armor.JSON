@@ -1,0 +1,12 @@
+{
+  "name":"Sorcerer in Terminator Armor",
+  "models":1,
+  "bs":3,
+  "ws":3,
+  "s":4,
+  "t":4,
+  "a":3,
+  "sv":[2,5],
+  "ld":9,
+  "weapons":["Combi-bolter","Combi-flamer","Combi-melta","Combi-plasma"]
+}

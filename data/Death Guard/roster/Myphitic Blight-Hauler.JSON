@@ -1,0 +1,12 @@
+{
+  "name": "Myphitic Blight-Hauler",
+  "models": [1,2,3],
+  "bs":4,
+  "ws":4,
+  "s":6,
+  "t":7,
+  "a":3,
+  "sv":[3,5],
+  "ld":8,
+  "weapons":["Bile Spurt", "Missile Launcher", "Multi-melta"]
+}

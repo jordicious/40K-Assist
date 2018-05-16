@@ -1,0 +1,13 @@
+{
+  "name": "Helbrute",
+  "models": 1,
+  "bs":3,
+
+  "ws":3,
+  "s":6,
+  "t":7,
+  "a":4,
+  "sv":3,
+  "ld":8,
+  "weapons":["Helbrute Plasma Cannon", "Missile Launcher", "Multi-melta”,”Reaper Autocannon", "Twin Heavy Bolter", "Twin Lascannon"]
+}
