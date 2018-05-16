@@ -77,6 +77,7 @@ function fillArmies(armies) {
 
 function populate(ros) {
     roster = ros.units;   //updates global list of available units
+    $('#unit')[0].innerHTML = '<option> -select- </option>';
     for (var i = 0; i < roster.length; i++) {
         $('#unit')[0].innerHTML += '<option>' + roster[i] + '</option>';    //generates and appends option tags for each unit
     }
@@ -86,6 +87,7 @@ function populate(ros) {
 function fillWargear(unit) {
     selUnit = unit; //updates the global selected unit object
     manifest = unit.weapons;    //updates the global list of available weapons
+    $('#weapon')[0].innerHTML = '<option> -select- </option>';
     for (var i = 0; i < manifest.length; i++) {
         $('#weapon')[0].innerHTML += '<option>' + manifest[i] + '</option>';    //generates and appends the names of all available weapons
     }
@@ -150,6 +152,20 @@ $(document).ready(function () {
     $('#unit2').change(function () {
         var file = fileHead2 + 'roster/' + $('#unit2').val() + '.json';
         JSONRead(file, readUnit2);
+    });
+
+    $("#modelsrange").mousemove(function () {
+        console.log($('#modelsrange').val());
+        $('#modelstext')[0].value = $('#modelsrange').val();
+    });
+
+    $("#modelsrange").change(function () {
+        console.log($('#modelsrange').val());
+        $('#modelstext')[0].value = $('#modelsrange').val();
+    });
+
+    $("#modelstext").change(function () {
+        $('#modelsrange')[0].value = $('#modelstext').val();
     })
 });
 
@@ -162,6 +178,7 @@ function fillArmies2(armies) {
 
 function populate2(ros) {
     roster2 = ros.units;
+    $('#unit2')[0].innerHTML = '<option> -select- </option>';
     for (var i = 0; i < roster2.length; i++) {
         $('#unit2')[0].innerHTML += '<option>' + roster2[i] + '</option>';
     }
@@ -170,21 +187,22 @@ function populate2(ros) {
 
 function readUnit2(unit) {  //this function fills up saves for the active unit kind of like how the ballistic skill fills.  the only difference is that there can only be 1 or 2 saves, never 3.
     selUnit2 = unit;
-
     $("#type2")[0].innerText = "Toughness: " + selUnit2.t + ", Save:";
-
     var sv = selUnit2.sv;
     $('#savebox')[0].innerHTML = '';
-    if (sv.length > 1) {
-        var line = '<td><input type="radio" name="save" value=' + sv[0] + ' checked><label>' + sv[0] + '+</label></td>';
-        var line2 = '<td><input type="radio" name="save" value=' + sv[1] + '><label>' + sv[1] + '++</label></td>';
+
+    if (sv.inv){
+        console.log("sv.inv is defined");
+        var line = '<td><input type="radio" name="save" value=' + sv.sv + ' checked><label>' + sv.sv + '+</label></td>';
+        var line2 = '<td><input type="radio" name="save" value=' + sv.inv + '><label>' + sv.inv + '++</label></td>';
         $('#savebox')[0].innerHTML += line+line2;
-        $('#type2')[0].innerText += " " + sv[0] + "+ / " + sv[1] + "++"
+        $('#type2')[0].innerText += " " + sv.sv + "+ / " + sv.inv + "++"
     } else {
         var line = '<td><input type="radio" name="save" value=' + sv + ' checked disabled><label>' + sv + '+</label></td>';
         $("#savebox")[0].innerHTML = line;
         $('#type2')[0].innerText += " " + sv + "+"
     }
+
     $("#unit2 option[value='none']").remove();  //removes the default -select- option
     svTrack = true;
     updatecomp();
@@ -199,7 +217,7 @@ function updatecomp(){
             case (wR < 0.5):
                 wT = 5;
                 break;
-            case (wR < 1):
+            case (wR <= 1):
                 wT = 4;
                 break;
             case (wR < 2):
