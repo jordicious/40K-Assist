@@ -1,0 +1,12 @@
+{
+  "name": "Plague Marines",
+  "models": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+  "bs":3,
+  "ws":3,
+  "s":4,
+  "t":5,
+  "a":[1,2],
+  "sv":3,
+  "ld":[7,8],
+  "weapons":["Blight Grenade", "Blight Launcher", "Bolt Gun", "Krak Grenade", "Meltagun", "Plague Belcher", "Plague Spewer", "Plasma Gun", "Plasma Pistol"]
+}

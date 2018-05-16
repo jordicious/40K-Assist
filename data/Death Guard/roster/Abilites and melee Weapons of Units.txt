@@ -94,6 +94,7 @@ Daemon Prince of Nurgle
 		Hellforged Sword
 		Malefic Talons (can take a second)
 	Abilities
+	*Psyker*
 		Daemonic (Implemented):5+ invuln save
 		Death to the False Emperor
 		Disgustingly Resilient
@@ -140,17 +141,162 @@ Foul Blightspawn
 		Unholy Death’s Head (hard to implement for other characters): Once per battle, a Foul Blightspawn or a friendly Death Guard Character within 3” may throw an Unholy Death’s Head Grenade instead of a Blight Grenade or Hyper Blight Grenade, when you do so change the weapons type to Grenade 2D6
 
 Helbrute
+	Melee Weapons
+		Helbrute Fist (can take 2)
+		Helbrute Hammer
+		Power Scourge
+	Abilities
+		Crazed (not necessary): At the end of any phase where this model suffers an unsaved wound roll a die, on a 6 this model immediately takes a shooting attack (if there are no enemies within 1") or a melee attack (if there are enemies within 1")
+		Battering Onslaught: +1 attacks if wielding 2 melee weapons
+		Explodes (not necessary): When reduced to 0 wounds roll a die, on a 6 all units within 3" take D3 moral wounds
+
 Lord of Contagion
+	Melee Weapons
+		Manreaper
+		Plague Reaper
+	Abilities
+		Cataphractii Armor (implemented, advance not necessary): 4+ invuln save, half advance rolls
+		Death to the False Emperor
+		Disgustingly Resilient
+		Nurgles Gift (not necessary): Friendly Death Guard units within 7" generate a 1" aura, and if an enemy is within range of that aura at the start of your turn they roll a die and on a 4+ suffer a mortal wound
+		Teleport Strike (not necessary): Can deepstrike
+
 Malignant Plaguecaster
+	Melee Weapons
+		Corrupted Staff
+	Abilities
+	*Psyker*
+		Death to the False Emperor
+		Disgustingly Resilient
+		Pestilential Fallout: Each this model successfully manifests a psychic power with a Psychic test of 7+, the nearest enemy within 7" suffers a mortal wound
+
 Mortarion
+	Melee Weapons
+		Attendants’ Claws and Teeth
+		Silence
+	Abilities
+	*Psyker*
+		Death to the False Emperor
+		Disgustingly Resilient
+		Host of Plagues (not necessary): Roll a Die for each enemy within 7" at the start of the Fight phase, if the roll equals or exceeds (9-18+ W: 4, 5-8 W: 5, 1-4 W:, 6) the unit suffers D3 mortal wounds
+		Primarch of the Death Guard (hard to implement for other units): Friendly Death Guard units within 7" may reroll failed hit rolls
+		Putrid Demise (not necessary): When reduced to 0 wounds roll a die, on a 4+ all units within 7" that do not have the Nurgle keyword take D3 mortal wounds
+		The Barbarian Plate (implemented): 4+ invuln
+		Toxic Presence (hard to implement on enemies not being attacked directly): Enemy units within 7" have -1 toughness
+
 Myphitic Blight-Haulers
+	Melee Weapons
+		Gnashing Maw
+	Abilities
+		Daemonic (implemented): 5+ invuln
+		Disgustingly Resilient
+		Foul Stench: Enemy units have -1 to hit this unit in the fight phase
+		Putrescent Fog (hard to implement for other units): Friend Death Guard Infantry units that are completely within 7" gain the benefit of cover
+		Putrid Explosion (not necessary):  When reduced to 0 wounds, roll a die on a 4+ each unit within 7" suffers 1 mortal wound
+		Tri-lobe: +1 to hit when this unit has 3 models
+		Tri-tracked (not necessary): does not suffer the penalty for moving and firing a heavy weapon
+
 Noxious Blightbringer
+	Melee Weapons
+		Cursed Plague Bell
+	Abilities
+		Death to the False Emperor
+		Disgustingly Resilient
+		Tocsin of Misery (advance not necessary, ld aura hard to implement): Enemies within 7" have -1 Leadership, Psykers have -2 instead. Also Death Guard units within the range roll 2 dice and discard the lowest when Advancing
+
 Plague Marines
+	Melee Weapons
+		Bubotic Axe
+		Flail of Corruption
+		Great Plague Cleaver
+		Mace of Contagion
+		Plaguesword
+		Plague Knife
+		Power Fist
+	Abilities
+		Death to the False Emperor
+		Disgustingly Resilient
+		Icon of Despair *item* (difficult to implement): Enemy units within 6" have -1 ld
+		Vectors of Death and Disease: A Plague Marine armed with: 2 Plague Knives, a Plague Knife and a Bubotic Axe, or a Mace of Contagion and Bubotic Axe have +1 Attack
+
 Plague Surgeon
+	Melee Weapons
+		Baleword
+	Abilities
+		Death to the False Emperor
+		Disgustingly Resilient
+		Gene-seed Thief: +1 to wound and hit rolls during the Fight phase when targeting ‘Adeptus Astartes Infantry’ or ‘Adeptus Astartes Biker’ units
+		Tainted Narthecium (hard to implement for other units): Friendly Death Guard units within 3" can reroll Disgustingly Resilient rolls of 1
+
 Plagueburst Crawler
+	*has 2 Plaguespitters
+	*if taking Entropy Cannon, you get 2
+	Melee Weapons
+		Improvised Melee
+	Abilities
+		Daemonic (implemented): 5+ invuln
+		Disgustingly Resilient
+		Explodes (not necessary): When reduced to 0 wounds roll a D6, on a 5+ each unit with 6" suffers D3 mortal wounds
+
 Possessed
+	Melee Weapons
+		Horrifying Mutations
+	Abilities
+		Daemonic (implemented): 5+ invuln
+		Death to the False Emperor
+		Writhing Tentacles (can program this or let the user manually input): at the start of each attack phase roll a D3, the result is the attack characteristic for this unit
+
 Poxwalkers
+	Melee Weapons
+		Improvised Melee
+	Abilities
+		Curse of the Walking Pox (not necessary): Each time an enemy ‘Infantry’ model is slain by a Poxwalker in the Fight phase, add 1 model to the Poxwalker’s unit
+		Diseased Horde:Add 1 to hit rolls if this unit contains more than 10 models
+		Disgustingly Resilient
+		Mindless: This unit never has to take Morale tests
+
 Sorcerer
+	Melee Weapons
+		Force Axe
+		Force Stave
+		Force Sword
+	Abilities
+	*Psyker*
+		Death to the False Emperor
 Sorcerer in Terminator Armor
+	Melee Weapons
+		Balesword
+		Chainfist
+		Force Axe
+		Force Stave
+		Force Sword
+		Lightning Claw
+		Power Axe
+		Power Fist
+		Power Maul
+		Power Sword
+	Abilities
+	*Psyker*
+		Death to the False Emperor
+		Teleport Strike (not necessary): Can deepstrike
+		Terminator Armor (implemented): 5+ invuln
 Tallyman
+	Melee Weapons
+		Improvised Melee
+	Abilities
+		Death to the False Emperor
+		Disgustingly Resilient
+		Festering Zealot (hard to implement for other units): Friendly Death Guard units with 7” may reroll failed hit rolls
+		The Seven Fold Chant (not necessary): If your army is Battle-forged, roll 2D6 each time you spend Command Points to use a Death Guard Stratagem, if the result is a 7 you don’t expend the Command Points on the Stratagem
+
 Typhus
+	Melee
+		Master-crafted Manreaper
+	Abilities
+	*Psyker*
+		Cataphractii Armor (implemented, advance not necessary): 4+ Invulnerable save, half Advance rolls
+		Death to the False Emperor
+		Disgustingly Resilient
+		Host of the Destroyer Hive (hard to implement): Friendly Poxwalker units within 7” have +1 Strength and Toughness
+		Nurgle’s Gift (not necessary): Friendly Death Guard units within 7” generate a 1” aura, and if an enemy is within range of that aura at the start of your turn they roll a die and on a 4+ suffer a mortal wound
+		Teleport Strike (not necessary): Can setup in a teleportarium chamber instead of in the deployment zone
