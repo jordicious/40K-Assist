@@ -37,22 +37,16 @@ $(document).ready(function () {
     // monitors the wargear selector and calls the subtype checker
     $('#weapon').change(function () {
         var weapon = $('#weapon').val();
-<<<<<<< HEAD
         var file = fileHead+'weapons/'+weapon+'.json';
-=======
         var file = fileHead + 'manifest/' + weapon + '.json';
->>>>>>> 09a345d8e967039521a8862deacd3553b40540fd
         JSONRead(file, pullsubs);
     });
 
     // monitors the subweapon selector for changes and calls the weapon display updater
     $('#subs').change(function () {
         var selWeap = $('#subs').val();
-<<<<<<< HEAD
         var file = fileHead+'weapons/'+selWeap+'.json';
-=======
         var file = fileHead + 'manifest/' + selWeap + '.json';
->>>>>>> 09a345d8e967039521a8862deacd3553b40540fd
         JSONRead(file, readWeapon)
     });
 
@@ -177,9 +171,9 @@ function populate2(ros) {
 function readUnit2(unit) {  //this function fills up saves for the active unit kind of like how the ballistic skill fills.  the only difference is that there can only be 1 or 2 saves, never 3.
     selUnit2 = unit;
 
-    $("#type2")[0].innerText = "Toughness: " + selUnit2.toughness + ", Save:";
+    $("#type2")[0].innerText = "Toughness: " + selUnit2.t + ", Save:";
 
-    var sv = selUnit2.save;
+    var sv = selUnit2.sv;
     $('#savebox')[0].innerHTML = '';
     if (sv.length > 1) {
         var line = '<td><input type="radio" name="save" value=' + sv[0] + ' checked><label>' + sv[0] + '+</label></td>';
@@ -200,7 +194,7 @@ function readUnit2(unit) {  //this function fills up saves for the active unit k
 function updatecomp(){
     var wT = 4;
     if (bsTrack && svTrack){
-        var wR = selWeap.s / selUnit2.toughness;
+        var wR = selWeap.s / selUnit2.t;
         switch (true){  //this switch sets the Wound Threshold wT based on strength and toughness
             case (wR < 0.5):
                 wT = 5;
