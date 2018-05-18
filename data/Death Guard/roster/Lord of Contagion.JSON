@@ -1,12 +1,16 @@
 {
   "name": "Lord of Contagion",
-  "models": 1,
-  "bs":0,
+  "bs":"NA",
   "ws":2,
   "s":4,
   "t":5,
   "a":4,
-  "sv":[2,4],
+  "sv":{"sv":2,"inv":4},
   "ld":9,
-  "weapons":[]
+  "weapons":[],
+  "melee":
+  [
+    "Manreaper",
+    "Plague Reaper"
+  ]
 }

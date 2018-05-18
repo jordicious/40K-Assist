@@ -1,12 +1,20 @@
 {
   "name":"Chaos Land Raider",
-  "models":1,
   "bs":[3,4,5],
   "ws":6,
   "s":8,
   "t":8,
   "a":[6,"d6",1],
-  "sv":2,
+  "sv":{"sv":2},
   "ld":9,
-  "weapons":["Twin Lascannon","Twin Heavy Bolter","Havoc Launcher", "Combi-bolter","Combi-flamer","Combi-melta","Combi-plasma"]
+  "weapons":
+  [
+    "Twin Lascannon",
+    "Twin Heavy Bolter",
+    "Havoc Launcher",
+    "Combi-bolter",
+    "Combi-flamer",
+    "Combi-melta",
+    "Combi-plasma"
+  ]
 }

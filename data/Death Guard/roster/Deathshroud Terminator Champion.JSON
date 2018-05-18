@@ -1,14 +1,12 @@
 {
-  "name":"Deathshroud Terminators",
-  "subs":["","Deathshroud Champion"],
-  "models":5,
+  "name":"Deathshroud Terminator Champion",
   "bs":3,
   "ws":3,
   "s":5,
   "t":5,
-  "a":3,
+  "a":4,
   "sv":{"sv":2,"inv":4},
-  "ld":8,
+  "ld":9,
   "weapons":
   [
     "Plaguespurt Gauntlet"

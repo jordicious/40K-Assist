@@ -1,12 +1,18 @@
 {
   "name": "Plagueburst Crawler",
-  "models": 1,
   "bs":[4,5,6],
   "ws":6,
   "s":[5,6,7],
   "t":8,
   "a":3,
-  "sv":[3,5],
+  "sv":{"sv":3,"inv":5},
   "ld":8,
-  "weapons":[ "Entropy Cannon", "Heavy Slugger", "Plagueburst Mortar", "Plaguespitter" "Rothail Volley Gun"]
+  "weapons":
+  [
+    "Entropy Cannon",
+    "Heavy Slugger",
+    "Plagueburst Mortar",
+    "Plaguespitter",
+    "Rothail Volley Gun"
+  ]
 }

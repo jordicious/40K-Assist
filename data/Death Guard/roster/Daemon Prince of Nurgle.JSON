@@ -1,12 +1,17 @@
 {
   "name":"Daemon Prince of Nurgle",
-  "models":1,
-  "bs":7,
+  "bs":"NA",
   "ws":2,
   "s":7,
   "t":6,
   "a":4,
-  "sv":[3,5],
+  "sv":{"sv":3,"inv":5},
   "ld":10,
-  "weapons":[]
+  "weapons":[],
+  "melee":
+  [
+    "Daemonic Axe",
+    "Hellforged Sword",
+    "Malefic Talons"
+  ]
 }

@@ -1,12 +1,19 @@
 {
   "name":"Typhus",
-  "models":1,
   "bs":2,
   "ws":2,
   "s":4,
   "t":5,
   "a":4,
-  "sv":[2,4],
+  "sv":{"sv":2,"inv":4},
   "ld":9,
-  "weapons":["Blight Grendade", "The Destroyer Hive"]
+  "weapons":
+  [
+    "Blight Grendade",
+    "The Destroyer Hive"
+  ],
+  "melee":
+  [
+    "Master-crafted Manreaper"
+  ]
 }

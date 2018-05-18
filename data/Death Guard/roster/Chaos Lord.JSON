@@ -1,12 +1,32 @@
 {
   "name":"Chaos Lord",
-  "models":1,
   "bs":2,
   "ws":2,
   "s":4,
   "t":4,
   "a":4,
-  "sv":[3,4],
+  "sv":{"sv":3,"inv":4},
   "ld":9,
-  "weapons":["Bolt Pistol", "Blight Grenade", "Combi-bolter","Combi-flamer","Combi-melta","Combi-plasma", "Krak Grenade", "Plasma Pistol"]
+  "weapons":
+  [
+    "Bolt Pistol",
+    "Blight Grenade",
+    "Combi-bolter",
+    "Combi-flamer",
+    "Combi-melta",
+    "Combi-plasma",
+    "Krak Grenade",
+    "Plasma Pistol"
+  ],
+  "melee":
+  [
+    "Balesword",
+    "Chainaxe",
+    "Chainsword",
+    "Lightning Claw",
+    "Power Axe",
+    "Power Fist",
+    "Power Maul",
+    "Power Sword"
+  ]
 }

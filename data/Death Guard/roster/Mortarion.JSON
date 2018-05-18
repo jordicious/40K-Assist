@@ -1,12 +1,20 @@
 {
   "name": "Mortarion",
-  "models": 1,
   "bs":2,
   "ws":2,
   "s":8,
   "t":7,
   "a":[6,5,4],
-  "sv":[3,4],
+  "sv":{"sv":3,"inv":4},
   "ld":10,
-  "weapons":["Phosphex Bombs", "The Lantern"]
+  "weapons":
+  [
+    "Phosphex Bombs",
+    "The Lantern"
+  ],
+  "melee":
+  [
+    "Attendants’ Claws and Teeth",
+    "Silence"
+  ]
 }

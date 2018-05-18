@@ -1,12 +1,27 @@
 {
   "name":"Chaos Lord in Terminator Armor",
-  "models":1,
   "bs":2,
   "ws":2,
   "s":4,
   "t":4,
   "a":4,
-  "sv":[2,4],
+  "sv":{"sv":2,"inv":4},
   "ld":9,
-  "weapons":["Combi-bolter","Combi-flamer","Combi-melta","Combi-plasma"]
+  "weapons":
+  [
+    "Combi-bolter",
+    "Combi-flamer",
+    "Combi-melta",
+    "Combi-plasma"
+  ],
+  "melee":
+  [
+    "Balesword",
+    "Chainfist",
+    "Lightning Claw",
+    "Power Axe",
+    "Power Fist",
+    "Power Maul",
+    "Power Sword"
+  ]
 }

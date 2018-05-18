@@ -1,0 +1,27 @@
+{
+  "name": "Blightlord Terminators",
+  "subs": ["","Blightlord Champion"],
+  "models": 9,
+  "bs": 3,
+  "ws": 3,
+  "s": 4,
+  "t": 5,
+  "a": 3,
+  "sv": {"sv": 3, "inv": 4},
+  "ld":8,
+  "weapons": [
+    "Blight Launcher",
+    "Combi-bolter",
+    "Combi-flamer",
+    "Combi-melta",
+    "Combi-plasma",
+    "Plague Spewer",
+    "Reaper Autocannon"
+  ],
+  "melee":
+  [
+    "Balesword",
+    "Bubotic Axe",
+    "Flail of Corruption"
+  ]
+}

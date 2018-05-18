@@ -1,12 +1,20 @@
 {
   "name":"Foetid Bloat-Drone",
-  "models":1,
   "bs":4,
   "ws":4,
   "s":[6,5,4],
   "t":7,
   "a":[3,2,1],
-  "sv":[3,5],
+  "sv":{"sv":3,"inv":5},
   "ld":8,
-  "weapons":["Heavy Blight Launcher","Plaguespitter"]
+  "weapons":
+  [
+    "Heavy Blight Launcher",
+    "Plaguespitter"
+  ],
+  "melee":
+  [
+    "Fleshmower",
+    "Plague Probe"
+  ]
 }

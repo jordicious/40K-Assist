@@ -1,12 +1,16 @@
 {
   "name":"Chaos Spawn",
-  "models":1,
+  "models":5,
   "bs":"NA",
   "ws":4,
   "s":5,
   "t":5,
   "a":"d6",
-  "sv":5,
+  "sv":{"sv":5},
   "ld":9,
-  "weapons":[]
+  "weapons":[],
+  "melee":
+  [
+    "Hideos Mutations"
+  ]
 }

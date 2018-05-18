@@ -1,0 +1,21 @@
+{
+  "name": "Blightlord Champion",
+  "bs": 3,
+  "ws": 3,
+  "s": 4,
+  "t": 5,
+  "a": 4,
+  "sv": {"sv": 3, "inv": 4},
+  "ld":9,
+  "weapons": [
+    "Combi-bolter",
+    "Combi-flamer",
+    "Combi-melta",
+    "Combi-plasma"
+  ],
+  "melee":
+  [
+    "Balesword",
+    "Bubotic Axe"
+  ]
+}
