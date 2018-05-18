@@ -25,6 +25,7 @@ $(document).ready(function () {
         var army = $('#input').val();
         fileHead = 'data/' + army + '/';
         JSONRead(fileHead + 'manifest.json', populate);
+        $("#input option[value='none']").remove();  //removes the default -select- option
     });
 
     // monitors changes to the unit selector and fills the wargear selector
@@ -32,6 +33,7 @@ $(document).ready(function () {
         var selUnit = $('#unit').val();
         var file = fileHead + 'roster/' + selUnit + '.json';
         JSONRead(file, fillWargear)
+        $("#unit option[value='none']").remove();   //removes the default -select- option
     });
 
     // monitors the wargear selector and calls the subtype checker
@@ -40,6 +42,7 @@ $(document).ready(function () {
         var file = fileHead+'weapons/'+weapon+'.json';
         var file = fileHead + 'manifest/' + weapon + '.json';
         JSONRead(file, pullsubs);
+        $("#weapon option[value='none']").remove(); //removes the default -select- option
     });
 
     // monitors the subweapon selector for changes and calls the weapon display updater
@@ -48,6 +51,20 @@ $(document).ready(function () {
         var file = fileHead+'weapons/'+selWeap+'.json';
         var file = fileHead + 'manifest/' + selWeap + '.json';
         JSONRead(file, readWeapon)
+    });
+
+    $("#modelsrange").mousemove(function () {
+        console.log($('#modelsrange').val());
+        $('#modelstext')[0].value = $('#modelsrange').val();
+    });
+
+    $("#modelsrange").change(function () {
+        console.log($('#modelsrange').val());
+        $('#modelstext')[0].value = $('#modelsrange').val();
+    });
+
+    $("#modelstext").change(function () {
+        $('#modelsrange')[0].value = $('#modelstext').val();
     });
 
     // initial hide of the subweapon selector
@@ -81,7 +98,6 @@ function populate(ros) {
     for (var i = 0; i < roster.length; i++) {
         $('#unit')[0].innerHTML += '<option>' + roster[i] + '</option>';    //generates and appends option tags for each unit
     }
-    $("#input option[value='none']").remove();  //removes the default -select- option
 }
 
 function fillWargear(unit) {
@@ -91,7 +107,6 @@ function fillWargear(unit) {
     for (var i = 0; i < manifest.length; i++) {
         $('#weapon')[0].innerHTML += '<option>' + manifest[i] + '</option>';    //generates and appends the names of all available weapons
     }
-    $("#unit option[value='none']").remove();   //removes the default -select- option
 
     var bs = unit.bs;   //this part of the function updates the values for the ballistic skill detector
     $('#slidebox')[0].innerHTML = ''; //clear the default option
@@ -127,7 +142,6 @@ function pullsubs(weap) {   // checks if the selected weapon has overcharge or s
                                                                             //this is so that we can use one function to get the name of the weapon we want to read from, and keep everything cleaner
         $('#subs')[0].innerHTML = line;
     }
-    $("#weapon option[value='none']").remove(); //removes the default -select- option
     $('#subs').change();    //listener trigger for the subselector
 }
 
@@ -148,25 +162,13 @@ $(document).ready(function () {
         var army = $('#input2').val();
         fileHead2 = 'data/' + army + '/';
         JSONRead(fileHead2 + 'manifest.json', populate2);
+        $("#input2 option[value='none']").remove(); //removes the default -select- option
     });
     $('#unit2').change(function () {
         var file = fileHead2 + 'roster/' + $('#unit2').val() + '.json';
+        $("#unit2 option[value='none']").remove(); //removes the default -select- option
         JSONRead(file, readUnit2);
     });
-
-    $("#modelsrange").mousemove(function () {
-        console.log($('#modelsrange').val());
-        $('#modelstext')[0].value = $('#modelsrange').val();
-    });
-
-    $("#modelsrange").change(function () {
-        console.log($('#modelsrange').val());
-        $('#modelstext')[0].value = $('#modelsrange').val();
-    });
-
-    $("#modelstext").change(function () {
-        $('#modelsrange')[0].value = $('#modelstext').val();
-    })
 });
 
 function fillArmies2(armies) {
@@ -182,25 +184,22 @@ function populate2(ros) {
     for (var i = 0; i < roster2.length; i++) {
         $('#unit2')[0].innerHTML += '<option>' + roster2[i] + '</option>';
     }
-    $("#input2 option[value='none']").remove(); //removes the default -select- option
 }
 
 function readUnit2(unit) {  //this function fills up saves for the active unit kind of like how the ballistic skill fills.  the only difference is that there can only be 1 or 2 saves, never 3.
     selUnit2 = unit;
-    $("#type2")[0].innerText = "Toughness: " + selUnit2.t + ", Save:";
     var sv = selUnit2.sv;
+    $("#type2")[0].innerText = "Toughness: " + selUnit2.t + ", Save:";
+    $('#type2')[0].innerText += " " + sv.sv + "+";
     $('#savebox')[0].innerHTML = '';
+    var line = '<td><input type="radio" name="save" value=' + sv.sv + ' checked><label>' + sv.sv + '+</label></td>';
+    $("#savebox")[0].innerHTML = line;
 
     if (sv.inv){
         console.log("sv.inv is defined");
-        var line = '<td><input type="radio" name="save" value=' + sv.sv + ' checked><label>' + sv.sv + '+</label></td>';
-        var line2 = '<td><input type="radio" name="save" value=' + sv.inv + '><label>' + sv.inv + '++</label></td>';
-        $('#savebox')[0].innerHTML += line+line2;
-        $('#type2')[0].innerText += " " + sv.sv + "+ / " + sv.inv + "++"
-    } else {
-        var line = '<td><input type="radio" name="save" value=' + sv + ' checked disabled><label>' + sv + '+</label></td>';
-        $("#savebox")[0].innerHTML = line;
-        $('#type2')[0].innerText += " " + sv + "+"
+        var line = '<td><input type="radio" name="save" value=' + sv.inv + '><label>' + sv.inv + '++</label></td>';
+        $('#savebox')[0].innerHTML += line;
+        $('#type2')[0].innerText += " / " + sv.inv + "++"
     }
 
     $("#unit2 option[value='none']").remove();  //removes the default -select- option
