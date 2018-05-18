@@ -1,0 +1,13 @@
+{
+  "name":"Breacher Team",
+  "subs":["","Shas'ui","DS8 Tactical Support Turret","MV36 Guardian Drone"],
+  "bs":4,
+  "t":3,
+  "sv":{"sv":4, "inv":5},
+  "models":10,
+  "weapons":[
+    "Pulse Blaster",
+    "Pulse Pistol",
+    "Photon Grenade"
+  ]
+}

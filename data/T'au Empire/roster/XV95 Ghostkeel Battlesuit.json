@@ -1,0 +1,14 @@
+{
+  "name":"XV95 Ghostkeel Battlesuit",
+  "subs":["","MV5 Stealth Drone"],
+  "bs":[4,5],
+  "t":6,
+  "sv":{"sv":3,"inv":4},
+  "weapons":[
+    "Burst Cannon",
+    "Cyclic Ion Raker",
+    "Flamer",
+    "Fusion Blaster",
+    "Fusion Collider"
+  ]
+}

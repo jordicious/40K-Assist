@@ -1,0 +1,13 @@
+{
+  "name":"Ethereal Guard",
+  "bs":3,
+  "t":3,
+  "sv":{"sv":5},
+  "models":2,
+  "weapons":[
+
+  ],
+  "Melee":[
+    "Honour Blade"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name":"DS8 Tactical Support Turret",
+  "bs":4,
+  "t":3,
+  "sv":{"sv":4},
+  "weapons":[
+    "Missile Pod",
+    "Smart Missile System"
+  ]
+}

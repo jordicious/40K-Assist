@@ -1,1 +1,8 @@
-{"name":"Plasma Rifle","type":"Rapid Fire","shots":1,"s":6,"ap":-3,"d":1}
+{
+  "name":"Plasma Rifle",
+  "type":"Rapid Fire",
+  "shots":1,
+  "s":6,
+  "ap":-3,
+  "d":1
+}

@@ -1,0 +1,14 @@
+{
+  "name":"Breacher Team",
+  "subs":["","Shas'ui"],
+  "bs":4,
+  "t":3,
+  "sv":{"sv":4, "inv":5},
+  "models":1,
+  "weapons":[
+    "Markerlight",
+    "Pulse Blaster",
+    "Pulse Pistol",
+    "Photon Grenade"
+  ]
+}

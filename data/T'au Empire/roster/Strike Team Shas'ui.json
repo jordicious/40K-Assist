@@ -1,0 +1,12 @@
+{
+  "name":"Strike Team Shas'ui",
+  "bs":4,
+  "t":3,
+  "sv":{"sv":4, "inv":6},
+  "weapons":[
+    "Markerlight",
+    "Pulse Carbine",
+    "Pulse Pistol",
+    "Photon Grenade"
+  ]
+}

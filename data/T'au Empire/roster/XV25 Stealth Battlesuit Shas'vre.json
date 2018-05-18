@@ -1,0 +1,12 @@
+{
+  "name":"XV25 Stealth Battlesuit",
+  "bs":4,
+  "t":5,
+  "sv":{"sv":3},
+  "models":2,
+  "weapons":[
+    "Burst Cannon",
+    "Fusion Blaster",
+    "Markerlight"
+  ]
+}

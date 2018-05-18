@@ -1,11 +1,12 @@
 {
-  "name":"Cadre Fireblade",
+  "name":"Darkstrider",
   "bs":2,
   "t":3,
-  "sv":{"sv":4},
+  "sv":{"sv":5},
+  "models":1,
   "weapons":[
     "Markerlight",
-    "Pulse Rifle",
+    "Pulse Carbine",
     "Photon Grenade"
   ]
 }

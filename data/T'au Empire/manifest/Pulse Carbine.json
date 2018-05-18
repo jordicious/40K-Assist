@@ -1,7 +1,7 @@
 {
-  "name":"Burst Cannon",
+  "name":"Pulse Carbine",
   "type":"Assault",
-  "shots":4,
+  "shots":2,
   "s":5,
   "ap":0,
   "d":1

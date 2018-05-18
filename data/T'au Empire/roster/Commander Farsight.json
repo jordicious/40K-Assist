@@ -1,0 +1,13 @@
+{
+  "name":"Commander Farsight",
+  "bs":2,
+  "t":5,
+  "sv":{"sv":3, "inv":4},
+  "models":1,
+  "weapons":[
+    "Plasma Rifle"
+  ],
+  "Melee":[
+    "Dawn Blade"
+  ]
+}

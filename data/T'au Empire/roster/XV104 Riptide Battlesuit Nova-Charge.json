@@ -1,0 +1,13 @@
+{
+  "name":"XV104 Riptide Battlesuit",
+  "bs":[4,5],
+  "t":7,
+  "sv":{"sv":2,"inv":3},
+  "weapons":[
+    "Fusion Blaster",
+    "Heavy Burst Cannon",
+    "Ion Accelerator",
+    "Plasma Rifle",
+    "Smart Missile System"
+  ]
+}

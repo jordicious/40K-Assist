@@ -1,0 +1,13 @@
+{
+  "name":"Aun-Shi",
+  "bs":4,
+  "t":3,
+  "sv":{"sv":0, "inv":4},
+  "models":1,
+  "weapons":[
+
+  ],
+  "melee":[
+    "Honour Blade"
+]
+}

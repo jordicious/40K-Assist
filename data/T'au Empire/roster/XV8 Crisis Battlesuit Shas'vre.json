@@ -1,0 +1,15 @@
+{
+  "name":"XV8 Crisis Battlesuit Shas'vre",
+  "bs":4,
+  "t":5,
+  "sv":{"sv":3, "inv":4},
+  "weapons":[
+    "Airbursting Fragmentation Projector",
+    "Burst Cannon",
+    "Cyclic Ion Blaster",
+    "Flamer",
+    "Fusion Blaster",
+    "Missile Pod",
+    "Plasma Rifle"
+  ]
+}

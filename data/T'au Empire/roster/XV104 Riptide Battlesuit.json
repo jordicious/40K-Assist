@@ -1,0 +1,14 @@
+{
+  "name":"XV104 Riptide Battlesuit",
+  "subs":["","Nova-Charge","MV84 Shielded Missile Drone"],
+  "bs":[4,5],
+  "t":7,
+  "sv":{"sv":2,"inv":5},
+  "weapons":[
+    "Fusion Blaster",
+    "Heavy Burst Cannon",
+    "Ion Accelerator",
+    "Plasma Rifle",
+    "Smart Missile System"
+  ]
+}

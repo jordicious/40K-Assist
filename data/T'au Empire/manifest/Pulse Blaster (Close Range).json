@@ -1,0 +1,8 @@
+{
+  "name":"Pulse Blaster (Close Range)",
+  "type":"Assault",
+  "shots":2,
+  "s":6,
+  "ap":-2,
+  "d":1
+}

@@ -1,1 +1,14 @@
-{"name":"Commander","bs":2,"t":5, "sv":{"sv":4, "inv":5},"weapons":["Airbursting Fragmentation Projector","Burst Cannon","Cyclic Ion Blaster","Flamer","Fusion Blaster","Missile Pod","Plasma Rifle"]}
+{
+  "name":"Commander",
+  "subs":["","(XV86 Coldstar)","Farsight","Shadowsun"],
+  "bs":2,
+  "t":5,
+  "sv":{"sv":4, "inv":5},
+  "weapons":[
+    "Airbursting Fragmentation Projector",
+    "Burst Cannon",
+    "Cyclic Ion Blaster",
+    "Flamer",
+    "Fusion Blaster","Missile Pod","Plasma Rifle"
+  ]
+}
