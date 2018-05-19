@@ -1,0 +1,8 @@
+{
+  "name":"Havoc Cannon",
+  "type":"Heavy",
+  "shots":"1D6",
+  "s":5,
+  "ap":0,
+  "d":1
+}

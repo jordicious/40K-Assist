@@ -1,0 +1,8 @@
+{
+  "name":"Predator Autocannon",
+  "type":"Heavy",
+  "shots":"2D3",
+  "s":7,
+  "ap":-1,
+  "d":3
+}

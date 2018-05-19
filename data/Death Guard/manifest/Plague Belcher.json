@@ -1,0 +1,9 @@
+{
+  "name":"Plague Belcher",
+  "type":"Assault",
+  "shots":"1D6",
+  "s":4,
+  "ap":0,
+  "d":1,
+  "special":["Auto","RW1"]
+}

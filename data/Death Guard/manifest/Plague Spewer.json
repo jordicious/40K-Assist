@@ -1,0 +1,9 @@
+{
+  "name":"Plague Spewer",
+  "type":"Assault",
+  "shots":"1D6",
+  "s":5,
+  "ap":-1,
+  "d":1,
+  "special":["Auto","RW1"]
+}

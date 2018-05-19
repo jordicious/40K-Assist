@@ -1,0 +1,8 @@
+{
+  "name":"Battle Cannon",
+  "type":"Heavy",
+  "shots":"1D6",
+  "s":8,
+  "ap":-2,
+  "d":"D3"
+}

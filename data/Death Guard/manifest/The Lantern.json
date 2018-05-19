@@ -1,0 +1,9 @@
+{
+  "name":"The Lantern",
+  "subs":["","Extra Targets"],
+  "type":"Pistol",
+  "shots":1,
+  "s":8,
+  "ap":-3,
+  "d":3
+}

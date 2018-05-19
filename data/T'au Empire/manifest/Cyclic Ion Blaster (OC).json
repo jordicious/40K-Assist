@@ -1,1 +1,8 @@
-{"name":"Cyclic Ion Blaster (OC)","type":"Assault","shots":"D3","s":8,"ap":-1,"d":"D3"}
+{
+  "name":"Cyclic Ion Blaster (OC)",
+  "type":"Assault",
+  "shots":"1D3",
+  "s":8,
+  "ap":-1,
+  "d":"1D3"
+}

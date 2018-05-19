@@ -1,0 +1,9 @@
+{
+  "name":"Against Vehicle",
+  "type":"Pistol",
+  "shots":1,
+  "s":4,
+  "ap":-1,
+  "d":1,
+  "special":["RW1"]
+}

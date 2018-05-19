@@ -1,0 +1,8 @@
+{
+  "name":"Phosphex Bombs",
+  "type":"Grenade",
+  "shots":"2D6",
+  "s":5,
+  "ap":-1,
+  "d":1
+}

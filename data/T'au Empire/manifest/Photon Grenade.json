@@ -1,1 +1,8 @@
-{"name":"Photon Grenade","type":"Grenade","shots":"D6","s":0,"ap":0,"d":0}
+{
+  "name":"Photon Grenade",
+  "type":"Grenade",
+  "shots":"1D6",
+  "s":0,
+  "ap":0,
+  "d":0
+}

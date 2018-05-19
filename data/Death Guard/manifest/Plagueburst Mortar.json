@@ -1,0 +1,9 @@
+{
+  "name":"Plagueburst Mortar",
+  "type":"Heavy",
+  "shots":"1D6",
+  "s":8,
+  "ap":-2,
+  "d":"1D3",
+  "special":["RW1"]
+}

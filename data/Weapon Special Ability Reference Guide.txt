@@ -1,0 +1,11 @@
+"RW1" = reroll wound rolls of 1
+"RW" = reroll failed wound rolls
+"RH1" = reroll hit rolls of 1
+"RH" = reroll failed hit rolls
+"Auto" = automatically hits (also applies to overwatch)
+"TG DMG ADV" = *toggle button* roll 2 dice when inflicting damage and use the higher number
+"TG -1H" = *toggle button* -1 to hit rolls when using the weapon
+"SC" = on a hit roll of 1 the user is slain (make it a notification or something if it happens just so the player knows)
+"AH5" = always hit on a roll of 5+ regardless of any modifiers (applies to overwatch) (does not replace users BS)
+"SMW OH1" = user suffers a mortal wound for each hit roll of 1 (make it a notification or something if it happens just so the player knows)
+"MW OW6' = deals an additional mortal wound for each wound roll of 6+

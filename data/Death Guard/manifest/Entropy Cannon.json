@@ -1,0 +1,8 @@
+{
+  "name":"Entropy Cannon",
+  "type":"Heavy",
+  "shots":1,
+  "s":8,
+  "ap":-4,
+  "d":"1D6"
+}

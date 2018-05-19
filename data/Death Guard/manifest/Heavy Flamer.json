@@ -1,0 +1,9 @@
+{
+  "name":"Heavy Flamer",
+  "type":"Heavy",
+  "shots":"1D6",
+  "s":5,
+  "ap":-1,
+  "d":1,
+  "special":["Auto"]
+}

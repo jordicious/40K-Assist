@@ -1,0 +1,9 @@
+{
+  "name":"Plaguespitter",
+  "type":"Assault",
+  "shots":"1D6",
+  "s":"user",
+  "ap":-1,
+  "d":1,
+  "special":["Auto","RW1"]
+}

@@ -1,0 +1,8 @@
+{
+  "name":"Frag Missile",
+  "type":"Heavy",
+  "shots":"1D6",
+  "s":4,
+  "ap":0,
+  "d":1
+}

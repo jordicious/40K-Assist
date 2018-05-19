@@ -1,0 +1,8 @@
+{
+  "name":"Krak Grenade",
+  "type":"Grenade",
+  "shots":1,
+  "s":6,
+  "ap":-1,
+  "d":"1D3"
+}

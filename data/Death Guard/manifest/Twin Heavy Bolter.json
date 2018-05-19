@@ -1,0 +1,8 @@
+{
+  "name":"Twin Heavy Bolter",
+  "type":"Heavy",
+  "shots":6,
+  "s":5,
+  "ap":-1,
+  "d":1
+}

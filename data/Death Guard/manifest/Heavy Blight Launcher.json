@@ -1,0 +1,9 @@
+{
+  "name":"Heavy Blight Launcher",
+  "type":"Assault",
+  "shots":6,
+  "s":6,
+  "ap":-2,
+  "d":"1D3",
+  "special":"RW1"
+}

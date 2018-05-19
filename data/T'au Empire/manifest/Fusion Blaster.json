@@ -1,1 +1,8 @@
-{"name":"Fusion Blaster","type":"Assault","shots":1,"s":8,"ap":-4,"d":"D6"}
+{
+  "name":"Fusion Blaster",
+  "type":"Assault",
+  "shots":1,
+  "s":8,
+  "ap":-4,
+  "d":"1D6"
+}

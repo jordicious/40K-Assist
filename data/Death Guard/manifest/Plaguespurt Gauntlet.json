@@ -1,0 +1,9 @@
+{
+  "name":"Plaguespurt Gauntlet",
+  "type":"Pistol",
+  "shots":"1D6",
+  "s":3,
+  "ap":0,
+  "d":1,
+  "special":["Auto","RW1"]
+}

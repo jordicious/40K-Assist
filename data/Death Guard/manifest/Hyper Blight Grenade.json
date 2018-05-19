@@ -1,0 +1,9 @@
+{
+  "name":"Hyper Blight Grenade",
+  "type":"Grenade",
+  "shots":"1D6",
+  "s":4,
+  "ap":0,
+  "d":2,
+  "special":["MW OW6","RW1"]
+}

@@ -1,0 +1,9 @@
+{
+  "name":"Blight Grenade",
+  "type":"Grenade",
+  "shots":"1D6",
+  "s":3,
+  "ap":0,
+  "d":1,
+  "special":["RW1"]
+}
