@@ -2,10 +2,34 @@
 "RW" = reroll failed wound rolls
 "RH1" = reroll hit rolls of 1
 "RH" = reroll failed hit rolls
+
 "Auto" = automatically hits (also applies to overwatch)
-"TG DMG ADV" = *toggle button* roll 2 dice when inflicting damage and use the higher number
-"TG -1H" = *toggle button* -1 to hit rolls when using the weapon
-"SC" = on a hit roll of 1 the user is slain (make it a notification or something if it happens just so the player knows)
 "AH5" = always hit on a roll of 5+ regardless of any modifiers (applies to overwatch) (does not replace users BS)
+
+"TG DMG ADV" = *toggle button* roll 2 dice when inflicting damage and use the higher number
+
+"TG -1H" = *toggle button* -1 to hit rolls when using the weapon
+"-1H" = -1 to hit rolls when using this weapon
+
+"SC" = on a hit roll of 1 the user is slain (make it a notification or something if it happens just so the player knows)
 "SMW OH1" = user suffers a mortal wound for each hit roll of 1 (make it a notification or something if it happens just so the player knows)
+
+
 "MW OW6' = deals an additional mortal wound for each wound roll of 6+
+
+"RS" = replace user strength with weapon strength stat instead of adding
+"MS" = multiply user strength by weapon strength stat instead of adding
+"US" = use user strength (ranged weapons only)
+
+"TG EA1" = *toggle button* gain an extra attack
+"TG EA2" = *toggle button* gain 2 extra attacks
+
+"EA1" = gain an extra attack
+"EA2" = gain 2 extra attacks
+"EA3" = gain 3 extra attacks
+"EA6" = gain 6 extra attacks
+"EAD6" = gain an extra D6 attacks
+*make these into 1 function, which reads the last number and adds that many attacks
+
+"MAD3" = make D3 attacks for each attack made with this weapon (i.e. if the unit has an A stat of 5 they would make 5d3 attacks instead of 5)
+"MA3" = make 3 attacks for each attack made with this weapon (i.e. if the unit has an A stat of 5 they would make 15 attacks instead of 5)

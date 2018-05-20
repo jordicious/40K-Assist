@@ -1,0 +1,7 @@
+{
+  "name":"Plague Probe",
+  "s":0,
+  "ap":-2,
+  "d":"1D3",
+  "special":["RW1"]
+}

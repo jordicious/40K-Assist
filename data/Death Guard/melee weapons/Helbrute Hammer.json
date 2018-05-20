@@ -1,0 +1,7 @@
+{
+  "name":"Helbrute Hammer",
+  "s":2,
+  "ap":-4,
+  "d":"1D6",
+  "special":["MS","-1H"]
+}

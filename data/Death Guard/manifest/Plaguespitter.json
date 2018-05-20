@@ -2,8 +2,8 @@
   "name":"Plaguespitter",
   "type":"Assault",
   "shots":"1D6",
-  "s":"user",
+  "s":0,
   "ap":-1,
   "d":1,
-  "special":["Auto","RW1"]
+  "special":["Auto","RW1","US"]
 }
