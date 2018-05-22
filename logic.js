@@ -143,7 +143,7 @@ function fillWargear(unit) {
 
     var bs = unit.bs;   //this part of the function updates the values for the ballistic skill detector
     $('#slidebox')[0].innerHTML = ''; //clear the default option
-    if (bs.length > 1) {     //simple check if ballistic value is an array
+    if (bs.length > 1 && bs!="NA") {     //simple check if ballistic value is an array, and if the unit has a BS at all
         var line = '<td><input type="radio" name="bs" value=' + bs[0] + ' checked><label>' + bs[0] + '+</label></td>';  //generates the first cell for the table that holds the bs buttons - keep this out of the for loop to avoid issues
         $('#slidebox')[0].innerHTML += line;
         for (var i = 1; i < bs.length; i++) {

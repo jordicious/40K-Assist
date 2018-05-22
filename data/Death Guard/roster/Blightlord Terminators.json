@@ -1,6 +1,6 @@
 {
   "name": "Blightlord Terminators",
-  "subs": ["","Blightlord Champion"],
+  "subs": ["","Champion"],
   "models": 9,
   "bs": 3,
   "ws": 3,

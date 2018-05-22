@@ -1,6 +1,6 @@
 {
   "name": "Plague Marines",
-  "subs":["","Plague Captain"]
+  "subs":["","Plague Captain"],
   "models":19,
   "bs":3,
   "ws":3,
@@ -18,7 +18,7 @@
     "Meltagun",
     "Plague Belcher",
     "Plague Spewer",
-    "Plasma Gun",
+    "Plasma Gun"
   ],
   "melee":
   [
