@@ -1,10 +1,1 @@
-{
-  "name":"Injector Pistol",
-  "subs":["","Against Vehicle"],
-  "type":"Pistol",
-  "shots":1,
-  "s":4,
-  "ap":-1,
-  "d":"1D6",
-  "special":["RW1"]
-}
+{"subs":["(Std)","Against Vehicle"]}

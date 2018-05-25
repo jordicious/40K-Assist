@@ -1,0 +1,9 @@
+{
+  "name":"(Std)",
+  "type":"Pistol",
+  "shots":1,
+  "s":4,
+  "ap":-1,
+  "d":"1D6",
+  "special":["RW1"]
+}
