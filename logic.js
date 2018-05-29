@@ -16,9 +16,27 @@ var selUnit2 = '';
 var svTrack = false;
 var bsTrack = false;
 
+function toggleFullScreen() {
+    var doc = window.document;
+    var docEl = doc.documentElement;
+
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
+    }
+    else {
+        cancelFullScreen.call(doc);
+    }
+}
 
 // listeners for left army
 $(document).ready(function () {
+    document.getElementById('fs').addEventListener("click", function() {
+        toggleFullScreen();
+    }, false);
+
     // initial population of armies available from the armies.json file
     JSONRead('/data/armies.json', fillArmies);
 
@@ -325,46 +343,38 @@ function fireWeapon()
     var x=0;
     var nHits=0;
     var shots=0;
-    if(selUnit=='')
-    {
+    if (! selUnit) {
         nHits="No unit selected";
         shots="No unit selected";
     }
-    else if(selWeap=='')
-    {
+    else if (! selWeap) {
         nHits="No weapon selected";
         shots="No weapon selected";
     }
-    else if(selUnit2=='')
+    else if (! selUnit2)
     {
         nHits="No target selected";
         shots="No target selected";
     }
     else {
-        if(typeof selWeap.shots==='string')
-        {
+        if(typeof selWeap.shots==='string') {
             var numDice=Number(selWeap.shots[0]);
             var typeDice=Number(selWeap.shots[2]);
-            for(var i=1;i<=numDice;i++)
-            {
-                shots=shots+Math.floor(Math.random() * (typeDice - 1 + 1)) + 1;
+            for(var i = 0; i < numDice; i++) {
+                shots += Math.floor(Math.random() * (typeDice) + 1);
             }
-            for (var i = 1; i <= shots; i++) {
-                x = Math.floor(Math.random() * (6 - 1 + 1)) + 1;//Randomly generates a number between 1 and 6
-                if (x >= selUnit.bs) {
-                    nHits += 1;
+            for (var i = 0; i < shots; i++) {
+                if ((Math.floor(Math.random()*6) + 1) >= selUnit.bs) {
+                    nHits++;
                 }
             }
         }
-        else
-        {
+        else {
             shots=selWeap.shots;
             for (var i = 1; i <= shots; i++)
             {
-                x = Math.floor(Math.random() * (6 - 1 + 1)) + 1;//Randomly generates a number between 1 and 6
-                if (x >= selUnit.bs)
-                {
-                    nHits += 1;
+                if ((Math.floor(Math.random()*6) + 1) >= selUnit.bs) {
+                    nHits++;
                 }
 
             }
@@ -372,19 +382,15 @@ function fireWeapon()
     }
     $('#Shots')[0].innerText = 'Number of shots made: ' + shots;
     $('#Hits')[0].innerText = 'Number of hits: ' + nHits;
-    if(nHits>0)
-    {
-        woundRoll(nHits)
+    if(nHits > 0) {
+        woundRoll(nHits);
     }
 }
-function woundRoll(nHits)
-{
+function woundRoll(nHits) {
     var wounds=0;
-    var x=0;
-    for (var i = 1; i <= nHits; i++) {
-        x = Math.floor(Math.random() * (6 - 1 + 1)) + 1;//Randomly generates a number between 1 and 6
-        if (x >= wT) {
-            wounds += 1;
+    for (var i = 0; i < nHits; i++) {
+        if ((Math.floor(Math.random()*6) + 1) >= wT) {
+            wounds ++;
         }
     }
     $('#Wounds')[0].innerText = 'Number of wounds: ' + wounds;
