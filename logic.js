@@ -419,6 +419,8 @@ function fireWeapon() {
 
     $('#Shots')[0].innerText = 'Number of shots made: ' + shots;
     $('#Hits')[0].innerText = 'Number of hits: ' + nHits;
+    $('#Saves')[0].innerText = 'Number of saves: ' + nSaves;
+    $('#Damage')[0].innerText = 'Amount of Damage: ' + nDamage;
 
 
 $('#Wounds')[0].innerText = 'Number of wounds: ' + nWounds;
