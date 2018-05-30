@@ -12,7 +12,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    transition: all 0.25s ease-in-out;
+    overflow-y: scroll;
 }
 
 p {
@@ -111,7 +111,7 @@ input[type=text]{
     position: relative;
     display: block;
     height: auto;
-    overflow-y: scroll;
+    top: 10%;
 }
 
 .header {
@@ -125,7 +125,8 @@ input[type=text]{
     color: whitesmoke;
     text-align: center;
     line-height: 100%;
-    display: block;
+    position: fixed;
+    float: top;
 }
 
 .spacer{
@@ -213,8 +214,10 @@ td label{
     transition: all 0.5s ease-out;
 }
 
-.button#fs{
-    float: left;
+#fs{
+    float: right;
+    cursor: pointer;
+    height: 100%;
 }
 
 .button:active{
@@ -233,7 +236,12 @@ td{
     transition: all 0.5s ease-in-out;
 }
 
-::-webkit-scrollbar {
+/* width */
+::-webkit-scrollbar{
     display: none;
 }
-/*hides the default scrollbar*/
+
+.inline{
+    display: inline-block;
+    padding: 0 15px 0 15px;
+}

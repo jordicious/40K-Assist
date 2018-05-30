@@ -25,9 +25,11 @@ function toggleFullScreen() {
 
     if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
         requestFullScreen.call(docEl);
+        $('#fs')[0].innerHTML = '<img src="icons/mx.png" height="100%">'
     }
     else {
         cancelFullScreen.call(doc);
+        $('#fs')[0].innerHTML = '<img src="icons/fs.png" height="100%">'
     }
 }
 
@@ -338,128 +340,86 @@ function updatecomp(){
 }
 
 //Fires weapon
-function fireWeapon()
-{
-    var bs=document.querySelector('input[name="bs"]:checked').value; //fixes the array issue
+function fireWeapon() {
+    var bs = $('input[name="bs"]').val(); //fixes the array issue
     var nHits=0;
     var shots=0;
     var nWounds=0;
     var nSaves=0;
     var nDamage=0;
-    if (! selUnit) {
-        nHits="No unit selected";
-        shots="No unit selected";
-        nWounds="No unit selected";
-        nSaves="No unit selected";
-        nDamage="No unit selected";
-    }
-    else if (! selWeap) {
-        nHits="No weapon selected";
-        shots="No weapon selected";
-        nWounds="No weapon selected";
-        nSaves="No weapon selected";
-        nDamage="No weapon selected";
-    }
-    else if (! selUnit2)
-    {
-        nHits="No target selected";
-        shots="No target selected";
-        nWounds="No target selected";
-        nSaves="No target selected";
-        nDamage="No target selected";
-    }
-    else {
-        if(typeof selWeap.shots==='string') {
-            var numDice=Number(selWeap.shots[0]);
-            var typeDice=Number(selWeap.shots[2]);
-            for(var i = 0; i < numDice; i++) {
+    if (selUnit && selWeap) {
+        var shots = 0;
+        if (typeof selWeap.shots === 'string') {
+            var numDice = Number(selWeap.shots[0]);
+            var typeDice = Number(selWeap.shots[2]);
+            for (var i = 0; i < numDice; i++) {
                 shots += Math.floor(Math.random() * (typeDice) + 1);
             }
-            for (var i = 0; i < shots; i++) {
-                if ((Math.floor(Math.random()*6) + 1) >= bs) {
-                    nHits++;
-                }
-            }
+        } else {
+            shots = selWeap.shots;
         }
-        else {
-            shots=selWeap.shots;
-            for (var i = 1; i <= shots; i++)
-            {
-                if ((Math.floor(Math.random()*6) + 1) >= bs) {
-                    nHits++;
-                }
 
+        for (var i = 0; i < shots; i++) {
+            if ((Math.floor(Math.random() * 6) + 1) >= bs) {
+                nHits++;
             }
         }
+
+        if (selUnit2) {
+            for (var i = 0; i < nHits; i++) {
+                if ((Math.floor(Math.random() * 6) + 1) >= wT) {
+                    nWounds++;
+                }
+            }
+            var save = $("input[name='save']").val();
+            if (save === selUnit2.sv.inv) {
+                usingInvuln = true
+            } else {
+                usingInvuln = false
+            }
+
+            for(var i=0;i<nWounds;i++){
+                if(usingInvuln){
+                    if ((Math.floor(Math.random() * 6) + 1) >= save) {
+                        nSaves ++;
+                    }
+                } else {
+                    if ((Math.floor(Math.random()*6) + 1) >= (save-selWeap.ap)) {
+                        nSaves ++;
+                    }
+                }
+            }
+            $('#Saves')[0].innerText = 'Number of saves made: ' + nSaves;
+            var unsaved = nWounds-nSaves;
+
+            var damage = 0;
+            for(var i = 0; i < unsaved; i++){
+                if(typeof selWeap.d === 'string'){
+                    var numDice = Number(selWeap.d[0]);
+                    var typeDice = Number(selWeap.d[2]);
+                    for(var i = 0; i < numDice; i++) {
+                        damage += Math.floor(Math.random() * (typeDice) + 1);
+                    }
+                } else {
+                    damage = selWeap.d;
+                }
+                nDamage += damage;
+            }
+            $('#Damage')[0].innerText = 'Amount of damage: ' + nDamage;
+        } else {
+            nWounds = 'No Selection';
+            nSaves="No selection";
+            nDamage="No selection";
+        }
+    } else {
+        nHits="No selection";
+        shots="No selection";
+        nWounds="No selection";
     }
+
     $('#Shots')[0].innerText = 'Number of shots made: ' + shots;
     $('#Hits')[0].innerText = 'Number of hits: ' + nHits;
-    if(typeof nHits==='string'){
-        $('#Wounds')[0].innerText = 'Number of wounds made: ' + nWounds;
-        $('#Saves')[0].innerText = 'Number of saves made: ' + nSaves;
-        $('#Damage')[0].innerText = 'Amount of damage: ' + nDamage;
-        return;
-    }
-    woundRoll(nHits,nWounds,nSaves,nDamage);
-}
-function woundRoll(nHits,nWounds,nSaves,nDamage) {
-    for (var i = 0; i < nHits; i++) {
-        if ((Math.floor(Math.random()*6) + 1) >= wT) {
-            nWounds ++;
-        }
-    }
-    $('#Wounds')[0].innerText = 'Number of wounds: ' + nWounds;
-    saveRoll(nWounds,nSaves,nDamage);
-}
-function saveRoll(nWounds,nSaves,nDamage){
-    //Essentially it checks if the target has multiple saves, meaning it would have an invuln save, than based on which of the two bubbles are checked it determines which of the saves is
-    //being used, and then finally it assigns the value of the checked bubble to the variable save (feel free to make this better aha)
-    var radios = document.getElementsByName('save');
-    var usingInvuln=false;
-    if(radios.length==2){
-        for (var i = 0; i<radios.length; i++)
-        {
-            if (radios[i].checked)
-            {
-                if(i==1){
-                    usingInvuln=true;
-                }
-                break;
-            }
-        }
-    }
-    var save=document.querySelector('input[name="save"]:checked').value;
 
-    for(var i=0;i<nWounds;i++){
-        if(usingInvuln){
-            if ((Math.floor(Math.random()*6) + 1) >= save) {
-                nSaves ++;
-            }
-        }
-        else{
-            if ((Math.floor(Math.random()*6) + 1) >= (save-selWeap.ap)) {
-                nSaves ++;
-            }
-        }
-    }
-    $('#Saves')[0].innerText = 'Number of saves made: ' + nSaves;
-    var unsaved=nWounds-nSaves;
-    damageRoll(unsaved,nDamage);
-}
-function damageRoll(unsaved,nDamage){
-    var damage=0;
-    for(var i=0;i<unsaved;i++){
-        if(typeof selWeap.d==='string'){
-            var numDice=Number(selWeap.d[0]);
-            var typeDice=Number(selWeap.d[2]);
-            for(var i = 0; i < numDice; i++) {
-                damage += Math.floor(Math.random() * (typeDice) + 1);
-            }
-        }
-        else{
-            damage=selWeap.d;
-        }
-        nDamage+=damage;
-    }
-    $('#Damage')[0].innerText = 'Amount of damage: ' + nDamage;
+
+$('#Wounds')[0].innerText = 'Number of wounds: ' + nWounds;
 }
