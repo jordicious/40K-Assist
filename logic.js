@@ -64,7 +64,6 @@ $(document).ready(function () {
     // monitors the wargear selector and calls the subtype checker
     $('#weapon').change(function () {
         var weapon = $('#weapon').val();
-        var file = fileHead+'weapons/'+weapon+'.json';
         var file = fileHead + 'manifest/' + weapon + '.json';
         JSONRead(file, pullsubs);
         $("#weapon option[value='none']").remove(); //removes the default -select- option
@@ -73,7 +72,6 @@ $(document).ready(function () {
     // monitors the subweapon selector for changes and calls the weapon display updater
     $('#subs').change(function () {
         var selWeap = $('#subs').val();
-        var file = fileHead+'weapons/'+selWeap+'.json';
         var file = fileHead + 'manifest/' + selWeap + '.json';
         JSONRead(file, readWeapon)
     });
@@ -98,6 +96,8 @@ $(document).ready(function () {
     $('#Shots')[0].innerText = 'Number of shots made:'
     $('#Hits')[0].innerText = 'Number of hits:'
     $('#Wounds')[0].innerText = 'Number of wounds: '
+    $('#Saves')[0].innerText = 'Number of saves:'
+    $('#Damage')[0].innerText = 'Amount of damage: '
 
     document.getElementById('Shoot').onclick = function() {
         fireWeapon();
@@ -333,28 +333,40 @@ function updatecomp(){
                 wT = 2;
                 break;
         }
-        $('#compdisplay')[0].innerText = 'Min Wound Roll: ' + wT + '+'
+        //$('#compdisplay')[0].innerText = 'Min Wound Roll: ' + wT + '+'
     }
 }
 
 //Fires weapon
 function fireWeapon()
 {
-    var x=0;
+    var bs=document.querySelector('input[name="bs"]:checked').value; //fixes the array issue
     var nHits=0;
     var shots=0;
+    var nWounds=0;
+    var nSaves=0;
+    var nDamage=0;
     if (! selUnit) {
         nHits="No unit selected";
         shots="No unit selected";
+        nWounds="No unit selected";
+        nSaves="No unit selected";
+        nDamage="No unit selected";
     }
     else if (! selWeap) {
         nHits="No weapon selected";
         shots="No weapon selected";
+        nWounds="No weapon selected";
+        nSaves="No weapon selected";
+        nDamage="No weapon selected";
     }
     else if (! selUnit2)
     {
         nHits="No target selected";
         shots="No target selected";
+        nWounds="No target selected";
+        nSaves="No target selected";
+        nDamage="No target selected";
     }
     else {
         if(typeof selWeap.shots==='string') {
@@ -364,7 +376,7 @@ function fireWeapon()
                 shots += Math.floor(Math.random() * (typeDice) + 1);
             }
             for (var i = 0; i < shots; i++) {
-                if ((Math.floor(Math.random()*6) + 1) >= selUnit.bs) {
+                if ((Math.floor(Math.random()*6) + 1) >= bs) {
                     nHits++;
                 }
             }
@@ -373,7 +385,7 @@ function fireWeapon()
             shots=selWeap.shots;
             for (var i = 1; i <= shots; i++)
             {
-                if ((Math.floor(Math.random()*6) + 1) >= selUnit.bs) {
+                if ((Math.floor(Math.random()*6) + 1) >= bs) {
                     nHits++;
                 }
 
@@ -382,16 +394,72 @@ function fireWeapon()
     }
     $('#Shots')[0].innerText = 'Number of shots made: ' + shots;
     $('#Hits')[0].innerText = 'Number of hits: ' + nHits;
-    if(nHits > 0) {
-        woundRoll(nHits);
+    if(typeof nHits==='string'){
+        $('#Wounds')[0].innerText = 'Number of wounds made: ' + nWounds;
+        $('#Saves')[0].innerText = 'Number of saves made: ' + nSaves;
+        $('#Damage')[0].innerText = 'Amount of damage: ' + nDamage;
+        return;
     }
+    woundRoll(nHits,nWounds,nSaves,nDamage);
 }
-function woundRoll(nHits) {
-    var wounds=0;
+function woundRoll(nHits,nWounds,nSaves,nDamage) {
     for (var i = 0; i < nHits; i++) {
         if ((Math.floor(Math.random()*6) + 1) >= wT) {
-            wounds ++;
+            nWounds ++;
         }
     }
-    $('#Wounds')[0].innerText = 'Number of wounds: ' + wounds;
+    $('#Wounds')[0].innerText = 'Number of wounds: ' + nWounds;
+    saveRoll(nWounds,nSaves,nDamage);
+}
+function saveRoll(nWounds,nSaves,nDamage){
+    //Essentially it checks if the target has multiple saves, meaning it would have an invuln save, than based on which of the two bubbles are checked it determines which of the saves is
+    //being used, and then finally it assigns the value of the checked bubble to the variable save (feel free to make this better aha)
+    var radios = document.getElementsByName('save');
+    var usingInvuln=false;
+    if(radios.length==2){
+        for (var i = 0; i<radios.length; i++)
+        {
+            if (radios[i].checked)
+            {
+                if(i==1){
+                    usingInvuln=true;
+                }
+                break;
+            }
+        }
+    }
+    var save=document.querySelector('input[name="save"]:checked').value;
+
+    for(var i=0;i<nWounds;i++){
+        if(usingInvuln){
+            if ((Math.floor(Math.random()*6) + 1) >= save) {
+                nSaves ++;
+            }
+        }
+        else{
+            if ((Math.floor(Math.random()*6) + 1) >= (save-selWeap.ap)) {
+                nSaves ++;
+            }
+        }
+    }
+    $('#Saves')[0].innerText = 'Number of saves made: ' + nSaves;
+    var unsaved=nWounds-nSaves;
+    damageRoll(unsaved,nDamage);
+}
+function damageRoll(unsaved,nDamage){
+    var damage=0;
+    for(var i=0;i<unsaved;i++){
+        if(typeof selWeap.d==='string'){
+            var numDice=Number(selWeap.d[0]);
+            var typeDice=Number(selWeap.d[2]);
+            for(var i = 0; i < numDice; i++) {
+                damage += Math.floor(Math.random() * (typeDice) + 1);
+            }
+        }
+        else{
+            damage=selWeap.d;
+        }
+        nDamage+=damage;
+    }
+    $('#Damage')[0].innerText = 'Amount of damage: ' + nDamage;
 }
