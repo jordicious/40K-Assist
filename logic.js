@@ -86,13 +86,11 @@ $(document).ready(function () {
         $('#modelstext')[0].value = $('#modelsrange').val();
     });
 
-    $("#modelstext").change(function () {
-        $('#modelsrange')[0].value = $('#modelstext').val();
-    });
 
     // initial hide of the subselectors
     $('#subweaponcell').hide();
     $('#subunitcell').hide();
+    $('#toggle buttons').hide();
 
     //Adds headings to the bottom
     $('#Shots')[0].innerText = 'Number of shots made:'
@@ -225,6 +223,24 @@ function readWeapon(weap) {
     var line = weap.type + ' ' + weap.shots + ' S:' + weap.s + ' AP:' + weap.ap + ' Damage:' + weap.d;  //updates the weapon readout with stats for active weapon
     $('#type')[0].innerText = line;
     updatecomp();
+    //Creates toggleable buttons
+    var buttonExists=false;
+    if(selWeap.special){
+        for(var i=0;i<selWeap.special.length;i++)
+        {
+            if($.inArray("TG DMG ADV", selWeap.special)>=-1){
+                document.getElementById('toggle buttons').style.display='block';
+                document.getElementById('TG DMG ADV').style.display='block';
+                buttonExists=true;
+            }
+            else{
+                document.getElementById('TG DMG ADV').style.display='none';
+            }
+        }
+    }
+    if(buttonExists==false){
+        document.getElementById('toggle buttons').style.display='none';
+    }
 }
 
 //any variable that acts on the right side should end in a 2 for ease of identification
@@ -342,6 +358,7 @@ function updatecomp(){
 //Fires weapon
 function fireWeapon() {
     var bs = $('input[name="bs"]').val(); //fixes the array issue
+    var models=$("#modelsrange").val();
     var nHits=0;
     var shots=0;
     var nWounds=0;
@@ -350,7 +367,8 @@ function fireWeapon() {
     var usingInvuln=false;
     //special property variables
     var auto=false;
-    var RW1=true
+    var RW1=false;
+    var DMG_ADV=false;
     //Determines if weapon has a special value
     if(selWeap.special)
     {
@@ -364,7 +382,13 @@ function fireWeapon() {
             }
         }
     }
-    if (selUnit && selWeap && selUnit2) {
+    //Deals with toggleable buttons
+    console.log(document.getElementById('TG DMG ADV').checked);
+    if(document.getElementById('TG DMG ADV').checked){
+        DMG_ADV=true;
+        console.log(":)");
+    }
+    if (selUnit && selWeap) {
         if (typeof selWeap.shots === 'string') {
             var numDice = Number(selWeap.shots[0]);
             var typeDice = Number(selWeap.shots[2]);
@@ -374,6 +398,7 @@ function fireWeapon() {
         } else {
             shots = selWeap.shots;
         }
+        shots=shots*models;
         //Hit roll
         for (var i = 0; i < shots; i++) {
             var x=Math.floor(Math.random() * 6) + 1;
@@ -381,60 +406,65 @@ function fireWeapon() {
                 nHits++;
             }
         }
-        //Wound roll
-        for (var i = 0; i < nHits; i++) {
-            var x=Math.floor(Math.random() * 6) + 1;
-            //Special property reroll wound roll of 1
-            if(RW1 && x==1)
-            {
-                x=Math.floor(Math.random() * 6) + 1;
-            }
-            if (x >= wT) {
-                nWounds++;
-            }
-        }
-        //Determines save value
-        var save = $("input[name='save']").val();
-        if (save === selUnit2.sv.inv) {
-            usingInvuln = true
-        } else {
-            usingInvuln = false
-        }
-        //Save roll
-        for(var i=0;i<nWounds;i++){
-            if(usingInvuln){
-                var x=Math.floor(Math.random() * 6) + 1;
-                if (x >= save) {
-                    nSaves ++;
+        if(selUnit2) {
+            //Wound roll
+            for (var i = 0; i < nHits; i++) {
+                var x = Math.floor(Math.random() * 6) + 1;
+                //Special property reroll wound roll of 1
+                if (RW1 && x == 1) {
+                    x = Math.floor(Math.random() * 6) + 1;
                 }
+                if (x >= wT) {
+                    nWounds++;
+                }
+            }
+            //Determines save value
+            var save = $("input[name='save']").val();
+            if (save === selUnit2.sv.inv) {
+                usingInvuln = true
             } else {
-                var x=Math.floor(Math.random() * 6) + 1;
-                if (x >= (save-selWeap.ap)) {
-                    nSaves ++;
+                usingInvuln = false
+            }
+            //Save roll
+            for (var i = 0; i < nWounds; i++) {
+                if (usingInvuln) {
+                    var x = Math.floor(Math.random() * 6) + 1;
+                    if (x >= save) {
+                        nSaves++;
+                    }
+                } else {
+                    var x = Math.floor(Math.random() * 6) + 1;
+                    if (x >= (save - selWeap.ap)) {
+                        nSaves++;
+                    }
                 }
             }
-        }
-        var unsaved = nWounds-nSaves;
-        //Damage roll
-        var damage = 0;
-        for(var i = 0; i < unsaved; i++){
-            if(typeof selWeap.d === 'string'){
-                var numDice = Number(selWeap.d[0]);
-                var typeDice = Number(selWeap.d[2]);
-                for(var i = 0; i < numDice; i++) {
-                    damage += Math.floor(Math.random() * (typeDice) + 1);
+            var unsaved = nWounds - nSaves;
+            //Damage roll
+            var damage = 0;
+            for (var i = 0; i < unsaved; i++) {
+                if (typeof selWeap.d === 'string') {
+                    var numDice = Number(selWeap.d[0]);
+                    var typeDice = Number(selWeap.d[2]);
+                    for (var i = 0; i < numDice; i++) {
+                        damage += Math.floor(Math.random() * (typeDice) + 1);
+                    }
+                } else {
+                    damage = selWeap.d;
                 }
-            } else {
-                damage = selWeap.d;
+                nDamage += damage;
             }
-            nDamage += damage;
         }
+        else{
+            nWounds="No selection";
+            nSaves="No selection";
+            nDamage="No selection";        }
     } else {
         nHits="No selection";
         shots="No selection";
         nWounds="No selection";
         nSaves="No selection";
-        nDamage="No selections"
+        nDamage="No selection";
     }
 
     $('#Shots')[0].innerText = 'Number of shots made: ' + shots;
