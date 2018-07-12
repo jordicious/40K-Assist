@@ -1,0 +1,8 @@
+{
+  "name":"Heavy Burst Cannon",
+  "type":"Heavy",
+  "shots":12,
+  "s":6,
+  "ap":-1,
+  "d":2
+}

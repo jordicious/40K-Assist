@@ -15,7 +15,6 @@ var selUnit2 = '';
 //trackers for save and ballistic updaters
 var svTrack = false;
 var bsTrack = false;
-
 function toggleFullScreen() {
     var doc = window.document;
     var docEl = doc.documentElement;
@@ -228,7 +227,7 @@ function readWeapon(weap) {
     if(selWeap.special){
         for(var i=0;i<selWeap.special.length;i++)
         {
-            if($.inArray("TG DMG ADV", selWeap.special)>=-1){
+            if($.inArray("TG DMG ADV", selWeap.special)>-1){
                 document.getElementById('toggle buttons').style.display='block';
                 document.getElementById('TG DMG ADV').style.display='block';
                 buttonExists=true;
@@ -236,6 +235,14 @@ function readWeapon(weap) {
             else{
                 document.getElementById('TG DMG ADV').style.display='none';
             }
+            if($.inArray("Combi", selWeap.special)>-1){
+            document.getElementById('toggle buttons').style.display='block';
+            document.getElementById('Combi').style.display='block';
+            buttonExists=true;
+        }
+        else{
+            document.getElementById('Combi').style.display='none';
+        }
         }
     }
     if(buttonExists==false){
@@ -368,7 +375,10 @@ function fireWeapon() {
     //special property variables
     var auto=false;
     var RW1=false;
+    var AH5=false;
+    //Toggle button variables
     var DMG_ADV=false;
+    var combi=false;
     //Determines if weapon has a special value
     if(selWeap.special)
     {
@@ -377,18 +387,22 @@ function fireWeapon() {
                 auto=true;
                 bs=-100;
             }
-            else if(selWeap.special[i]=="RW1"){
+            else if(selWeap.special[i]=="RW1")
                 RW1=true;
-            }
+            else if(selWeap.special[i]=="AH5")
+                AH5=true;
         }
     }
     //Deals with toggleable buttons
-    console.log(document.getElementById('TG DMG ADV').checked);
+    console.log(document.getElementById('Combi').checked);
     if(document.getElementById('TG DMG ADV').checked){
         DMG_ADV=true;
-        console.log(":)");
+    }
+    if(document.getElementById('Combi').checked){
+        combi=true;
     }
     if (selUnit && selWeap) {
+        //deals with variable number of shots i.e. D6 shots
         if (typeof selWeap.shots === 'string') {
             var numDice = Number(selWeap.shots[0]);
             var typeDice = Number(selWeap.shots[2]);
@@ -402,6 +416,10 @@ function fireWeapon() {
         //Hit roll
         for (var i = 0; i < shots; i++) {
             var x=Math.floor(Math.random() * 6) + 1;
+            if(combi)
+                bs+=1;
+            if(AH5 && bs>5)
+                bs=5;
             if (x>= bs) {
                 nHits++;
             }
@@ -446,8 +464,15 @@ function fireWeapon() {
                 if (typeof selWeap.d === 'string') {
                     var numDice = Number(selWeap.d[0]);
                     var typeDice = Number(selWeap.d[2]);
+                    damage=0;//resets damage between each unsaved shot
                     for (var i = 0; i < numDice; i++) {
                         damage += Math.floor(Math.random() * (typeDice) + 1);
+                        //deals with dmg adv special property
+                        if(DMG_ADV==true){
+                            var y=Math.floor(Math.random() * (typeDice) + 1);
+                            if(y>damage)
+                                damage=y;
+                        }
                     }
                 } else {
                     damage = selWeap.d;

@@ -1,18 +1,17 @@
 {
   "name":"T'au Empire",
   "units":[
-    "Commander",
-    "Ethereal",
-    "Cadre Fireblade",
     "Aun-Shi",
     "Aun-Va",
-    "Darkstrider",
-    "Strike Team",
     "Breacher Team",
-
-    "XV25 Stealth Battlesuit",
+    "Cadre Fireblade",
+    "Commander",
+    "Darkstrider",
+    "Ethereal",
+    "Strike Team",
     "XV8 Crisis Battlesuit",
     "XV8 Crisis Bodyguard",
+    "XV25 Stealth Battlesuit",
     "XV95 Ghostkeel Battlesuit",
     "XV104 Riptide Battlesuit"
   ]

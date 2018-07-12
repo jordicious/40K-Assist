@@ -1,9 +1,8 @@
 {
-  "name":"Boltgun",
+  "name":"Kroot Rifle (Shooting)",
   "type":"Rapid Fire",
   "shots":1,
   "s":4,
   "ap":0,
-  "d":1,
-  "special": ["Combi"]
+  "d":1
 }

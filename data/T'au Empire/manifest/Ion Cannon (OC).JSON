@@ -1,9 +1,9 @@
 {
-  "name":"Cyclic Ion Raker (OC)",
+  "name":"(OC)",
   "type":"Heavy",
   "shots":"1D6",
   "s":8,
-  "ap":-1,
-  "d":"1D3",
+  "ap":-2,
+  "d":3,
   "special":["SMW OH1 M1"]
 }

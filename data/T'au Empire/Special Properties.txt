@@ -1,0 +1,23 @@
+FOR THE GREATER GOOD: When an enemy unit declares a charge, a unit with this ability that is within 6" of one of the charging unit’s targets may fire Overwatch as if they were also targeted. A unit that does so cannot fire Overwatch again in this turn.
+MASTER OF WAR: Once per battle, at the beginning ofyour turn, a single COMMANDER fromyour army can declare either Kauyonor Mont’ka:
+Kauyon: Until the end of the turn, you canre-roll failed hit rolls for friendly <SEPT> units within 6" of the COMMANDER, but these units cannot move for any reason.
+Mont’ka: Friendly <SEPT> units within 6" of the COMMANDER can both Advance and shoot as if they hadn’t moved this turn
+
+Tau Septs:
+T’AU SEPT: COORDINATED FIRE ARCS
+When a unit with this tenet uses their For the Greater Good ability, or when they fire Overwatch whilst they are within 6" of a friendly T’au Sept unit, a 5 or 6 is required for a successful hit roll, irrespective of the firing model’s Ballistic Skill or any modifiers.
+
+VIOR’LA SEPT: STRIKE FAST
+If a unit with this tenet Advances, it treats all Rapid Fire weapons it is armed with as Assault weapons until the end of the turn (e.g. a Rapid Fire 1 weapon is treated as an Assault 1 weapon). In addition, models with this tenet do not suffer the penalty to their hit rolls for Advancing and firing Assault weapons.
+
+DAL’YTH SEPT: ADAPTIVE CAMOUFLAGE
+A unit with this tenet that does not Manta Strike, move, Fall Back, charge, pile in or consolidate in its turn may claim the benefit of cover in the opponent’s subsequent turn, even while in the open.
+
+SA’CEA SEPT: CALM DISCIPLINE
+Add 1 to the Leadership characteristic of models with this tenet. In addition, in the Shooting phase you can re-roll a single failed hit roll when a unit with this tenet shoots.
+
+BORK’AN SEPT: SUPERIOR CRAFTSMANSHIP
+Models with this tenet may add 6" to the maximum Range of any Rapid Fire and Heavy weapons they are armed with.
+
+FARSIGHT ENCLAVES: DEVASTATING COUNTER-STRIKE
+Re-roll wound rolls of 1 for models with this tenet for shooting attacks against enemy units that are within 6" of the firing model.

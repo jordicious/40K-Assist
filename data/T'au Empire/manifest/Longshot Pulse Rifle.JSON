@@ -1,0 +1,9 @@
+{
+  "name":"Longshot Pulse Rifle",
+  "type":"Rapid Fire",
+  "shots":1,
+  "s":5,
+  "ap":0,
+  "d":1,
+  "special":["MW OW6"]
+}

@@ -1,0 +1,8 @@
+{
+  "name":"High-Yield Missile Pod",
+  "type":"Heavy",
+  "shots":4,
+  "s":7,
+  "ap":-1,
+  "d":"1D3"
+}

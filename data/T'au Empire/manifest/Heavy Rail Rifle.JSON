@@ -1,0 +1,9 @@
+{
+  "name":"Heavy Rail Rifle",
+  "type":"Heavy",
+  "shots":2,
+  "s":8,
+  "ap":-4,
+  "d":"1D6",
+  "special":["MW OW6"]
+}

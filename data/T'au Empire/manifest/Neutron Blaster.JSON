@@ -1,0 +1,8 @@
+{
+  "name":"Neutron Blaster",
+  "type":"Assault",
+  "shots":2,
+  "s":5,
+  "ap":-2,
+  "d":1
+}

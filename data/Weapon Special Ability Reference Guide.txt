@@ -3,19 +3,26 @@
 "RH1" = reroll hit rolls of 1
 "RH" = reroll failed hit rolls
 
+"BH WOF" = +1 to hit against units without the 'Fly' keyword (will need to go back and add all tags to units as multiple abilities function off keywords)
+
 "Auto" = automatically hits (also applies to overwatch)
 "AH5" = always hit on a roll of 5+ regardless of any modifiers (applies to overwatch) (does not replace users BS)
+"OH6" = only hit on a roll of 6+ regardless of any modifiers (replaces users BS)
 
 "TG DMG ADV" = *toggle button* roll 2 dice when inflicting damage and use the higher number
 
-"TG -1H" = *toggle button* -1 to hit rolls when using the weapon
-"-1H" = -1 to hit rolls when using this weapon
+"Combi" = *toggle button* -1 to hit rolls when using the weapon
+"-1H" = -1 to hit rolls when using this weapon **Name Needs to be changed**
+"H DBF" = enemies now suffer -1 to hit rolls when hit by this weapon (will likely have to create a checkbox for the attacking army when fighting an army with a weapon with this property), (make it a notification or something if it happens just so the player knows)
+"NCB" = no bonus from cover when targeted by this weapon (hide the checkbox that gives the benefit of cover to the defender)
 
 "SC" = on a hit roll of 1 the user is slain (make it a notification or something if it happens just so the player knows)
 "SMW OH1" = user suffers a mortal wound for each hit roll of 1 (make it a notification or something if it happens just so the player knows)
+"SMW OH1 M1" = user suffers a mortal wound for a hit roll of 1 (max of 1 mortal wound suffered this way regardless of how many 1s are rolled), (make it a notification or something if it happens just so the player knows)
 
-
-"MW OW6' = deals an additional mortal wound for each wound roll of 6+
+"DMW" = deals mortal wound damage instead of normal damage (no save)
+"MW OW6" = deals an additional mortal wound for each wound roll of 6+
+"D3MW OW6" = deals d3 additional mortal wounds for each wound roll of 6+
 
 "RS" = replace user strength with weapon strength stat instead of adding
 "MS" = multiply user strength by weapon strength stat instead of adding
@@ -33,3 +40,6 @@
 
 "MAD3" = make D3 attacks for each attack made with this weapon (i.e. if the unit has an A stat of 5 they would make 5d3 attacks instead of 5)
 "MA3" = make 3 attacks for each attack made with this weapon (i.e. if the unit has an A stat of 5 they would make 15 attacks instead of 5)
+
+"ML" = applies marker lights (each shot will have to activate the relative variables)
+"Pulse Bomb" = Roll a D6 for each model in that unit (up to a maximum of 10), adding 1 to the result if the enemy unit is INFANTRY. For each roll of 5+, the target unit suffers 1 mortal wound.

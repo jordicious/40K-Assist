@@ -4,5 +4,6 @@
   "shots":"1D6",
   "s":0,
   "ap":0,
-  "d":0
+  "d":0,
+  "special":["H DBF"]
 }

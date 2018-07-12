@@ -1,0 +1,9 @@
+{
+  "name":"Destroyer Missile",
+  "type":"Heavy",
+  "shots":1,
+  "s":"NA",
+  "ap":"NA",
+  "d":"1D3",
+  "special":["OH6","DMW"]
+}

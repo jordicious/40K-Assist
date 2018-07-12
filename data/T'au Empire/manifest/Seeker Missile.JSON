@@ -1,0 +1,9 @@
+{
+  "name":"Seeker Missile",
+  "type":"Heavy",
+  "shots":1,
+  "s":8,
+  "ap":-2,
+  "d":"1D6",
+  "special":["OH6"]
+}

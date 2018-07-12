@@ -1,0 +1,9 @@
+{
+  "name":"(Solid Shot)",
+  "type":"Heavy",
+  "shots":1,
+  "s":10,
+  "ap":-4,
+  "d":"1D6",
+  "special":["D3MW OW6"]
+}

@@ -1,0 +1,9 @@
+{
+  "name":"(Std)",
+  "type":"Assault",
+  "shots":4,
+  "s":7,
+  "ap":-1,
+  "d":1,
+  "special":["BH WOF"]
+}

@@ -1,0 +1,9 @@
+{
+  "name":"(OC)",
+  "type":"Assault",
+  "shots":4,
+  "s":8,
+  "ap":-1,
+  "d":"1D3",
+  "special":["BH WOF","SMW OH1 M1"]
+}

@@ -1,0 +1,9 @@
+{
+  "name":"Supremacy Railgun",
+  "type":"Heavy",
+  "shots":2,
+  "s":10,
+  "ap":-4,
+  "d":"1D6",
+  "special":["D3MW OW6"]
+}

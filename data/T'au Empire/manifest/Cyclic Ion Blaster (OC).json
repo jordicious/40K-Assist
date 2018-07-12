@@ -4,5 +4,6 @@
   "shots":"1D3",
   "s":8,
   "ap":-1,
-  "d":"1D3"
+  "d":"1D3",
+  "special":["SMW OH1 M1"]
 }

@@ -1,7 +1,7 @@
 {
-  "name":"Fusion Blaster",
-  "type":"Assault",
-  "shots":1,
+  "name":"Fusion Collider",
+  "type":"Heavy",
+  "shots":"1D3",
   "s":8,
   "ap":-4,
   "d":"1D6",
